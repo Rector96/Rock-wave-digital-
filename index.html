@@ -9,7 +9,7 @@
     <meta property="og:description" content="Secure web architectures, mobile apps, custom automation pipelines, and corporate enterprise hardware procurement." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#0F172A" />
+    <meta name="theme-color" content="#FFFFFF" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,16 +25,26 @@
           extend: {
             colors: {
               slate: {
-                750: '#1e293b',
-                850: '#131d31',
+                50: '#F8FAFC',
+                100: '#F1F5F9',
+                150: '#EBEFF5',
+                200: '#E2E8F0',
+                300: '#CBD5E1',
+                400: '#94A3B8',
+                500: '#64748B',
+                600: '#475569',
+                700: '#334155',
+                800: '#1E293B',
                 900: '#0F172A',
                 950: '#0A0F1D',
               },
               cyan: {
-                cyber: '#06B6D4',
+                cyber: '#0891B2',
+                glow: '#06B6D4',
               },
               blue: {
                 electric: '#2563EB',
+                deep: '#1D4ED8',
               },
               emerald: {
                 cta: '#10B981',
@@ -51,61 +61,83 @@
     </script>
 
     <style>
-      /* Smooth & Native App Styling */
+      /* Smooth & Glassy White App Styling */
       html {
         scroll-behavior: smooth;
-        background-color: #0F172A;
+        background-color: #F8FAFC;
         -webkit-tap-highlight-color: transparent;
       }
 
       body {
-        background-color: #0F172A;
-        color: #F1F5F9;
+        background-color: #F8FAFC;
+        color: #1E293B;
         font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
         -webkit-font-smoothing: antialiased;
         overscroll-behavior-y: none;
       }
 
-      /* Compact Native Custom scrollbars */
+      /* Compact Native Custom scrollbars for light theme */
       ::-webkit-scrollbar {
         width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #0F172A;
+        background: #F1F5F9;
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155;
+        background: #CBD5E1;
         border-radius: 9999px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #06B6D4;
+        background: #0891B2;
+      }
+
+      /* Glass Panel Classes */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(226, 232, 240, 0.85);
+        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+      }
+
+      .glass-card-hover {
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .glass-card-hover:hover {
+        transform: translateY(-3px);
+        border-color: rgba(8, 145, 178, 0.45);
+        box-shadow: 0 16px 32px -8px rgba(8, 145, 178, 0.12), 0 2px 8px -1px rgba(15, 23, 42, 0.04);
+      }
+      .glass-card-hover:active {
+        transform: scale(0.99);
+      }
+
+      .glass-dock {
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-top: 1px solid rgba(226, 232, 240, 0.9);
+      }
+
+      .glass-header {
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
       }
 
       /* Compact Input styling */
       .custom-input {
-        border: 1px solid #334155;
+        background-color: #FFFFFF;
+        border: 1px solid #CBD5E1;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .custom-input:focus {
         border-color: #2563EB;
         outline: none;
-        box-shadow: 0 0 0 1px #2563EB, 0 0 12px rgba(37, 99, 235, 0.25);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
       }
 
-      /* Native Card Hover & Tap feedback */
-      .service-card {
-        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .service-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(6, 182, 212, 0.45);
-        box-shadow: 0 12px 24px -8px rgba(6, 182, 212, 0.1), 0 0 1px 1px rgba(6, 182, 212, 0.2);
-      }
-      .service-card:active {
-        transform: scale(0.99);
-      }
-
-      /* Native Mobile Button Press feel */
+      /* Native Touch Button feel */
       .btn-native {
         transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
       }
@@ -113,28 +145,36 @@
         transform: scale(0.97);
       }
 
-      /* Glass panel */
-      .glass-dock {
-        background: rgba(15, 23, 42, 0.88);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+      /* Modal animation */
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96) translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      .modal-animate-enter {
+        animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     </style>
   </head>
 
-  <body class="bg-[#0F172A] text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-slate-950 pb-20 md:pb-0">
+  <body class="bg-[#F8FAFC] text-slate-800 min-h-screen flex flex-col selection:bg-cyan-100 selection:text-cyan-900 pb-20 md:pb-0">
 
     <!-- ========================================== -->
     <!-- 1. STICKY NAVIGATION HEADER                -->
     <!-- ========================================== -->
-    <header id="top-nav" class="sticky top-0 z-40 bg-[#0F172A]/90 backdrop-blur-md border-b border-slate-800/80">
+    <header id="top-nav" class="sticky top-0 z-40 glass-header border-b border-slate-200/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20">
           
           <!-- Left: Company Logo & Brand Name -->
           <a href="#home" class="flex items-center gap-2.5 sm:gap-3 group min-h-[48px] min-w-[48px] py-1 select-none" aria-label="Rock Wave Digital Enterprise Home">
             <!-- Distinctive Cyber Wave Emblem -->
-            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#06B6D4] flex items-center justify-center shadow-md shadow-cyan-950/40 border border-cyan-400/30 group-hover:scale-105 transition-transform duration-200">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#0891B2] flex items-center justify-center shadow-md shadow-blue-500/20 border border-blue-400/30 group-hover:scale-105 transition-transform duration-200">
               <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M2 12c.6 0 1.2-.4 1.5-.9l2.8-5.3c.6-1.1 2.2-1.1 2.8 0l3.8 7.4c.5 1 2 1 2.5 0l2.3-4.4c.5-1 2-1 2.5 0l1.8 3.5c.3.5.9.8 1.5.8h1.3" />
                 <circle cx="12" cy="12" r="1" fill="currentColor" />
@@ -142,14 +182,14 @@
             </div>
             <div class="flex flex-col">
               <div class="flex items-center gap-1.5 sm:gap-2">
-                <span class="font-extrabold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+                <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
                   Rock Wave
                 </span>
-                <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider font-semibold px-1.5 sm:px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200">
                   ICT Firm
                 </span>
               </div>
-              <span class="text-[11px] sm:text-xs text-slate-400 font-medium tracking-wide">
+              <span class="text-[11px] sm:text-xs text-slate-500 font-medium tracking-wide">
                 Digital Enterprise
               </span>
             </div>
@@ -157,32 +197,35 @@
 
           <!-- Center/Right: Desktop Navigation Links -->
           <nav class="hidden md:flex items-center gap-1" aria-label="Main Desktop Navigation">
-            <a href="#home" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-xl transition-all">
+            <a href="#home" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               Home
             </a>
-            <a href="#services" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-xl transition-all">
+            <a href="#services" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               Services
             </a>
-            <a href="#about" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-xl transition-all">
+            <a href="#projects" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
+              Projects
+            </a>
+            <a href="#about" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               About Us
             </a>
-            <a href="#contact" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-xl transition-all">
+            <a href="#contact" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               Contact Us
             </a>
           </nav>
 
           <!-- Far Right: "Get a Quote" Button & Mobile Toggle -->
           <div class="flex items-center gap-2 sm:gap-3">
-            <a href="#contact" class="btn-native hidden sm:inline-flex min-h-[48px] px-5 py-2.5 items-center justify-center rounded-xl bg-[#10B981] hover:bg-[#059669] text-white text-xs sm:text-sm font-bold tracking-wide shadow-md shadow-emerald-950/40 hover:shadow-emerald-500/20 transition-all duration-200">
+            <a href="#contact" class="btn-native hidden sm:inline-flex min-h-[48px] px-5 py-2.5 items-center justify-center rounded-xl bg-[#10B981] hover:bg-[#059669] text-white text-xs sm:text-sm font-bold tracking-wide shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all duration-200">
               Get a Quote
             </a>
 
             <!-- Mobile Hamburger Button (min 48px x 48px touch target) -->
-            <button id="mobile-menu-btn" type="button" class="md:hidden min-h-[48px] min-w-[48px] w-12 h-12 flex items-center justify-center rounded-xl bg-slate-850 hover:bg-slate-800 border border-slate-700/80 text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] active:scale-95 transition-transform" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
-              <svg id="hamburger-icon" class="w-5 h-5 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="mobile-menu-btn" type="button" class="md:hidden min-h-[48px] min-w-[48px] w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100 hover:bg-slate-200/80 border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-95 transition-transform" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle navigation menu">
+              <svg id="hamburger-icon" class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg id="close-icon" class="w-5 h-5 text-slate-200 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg id="close-icon" class="w-5 h-5 text-slate-700 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -192,21 +235,24 @@
       </div>
 
       <!-- Mobile Navigation Drawer Overlay (Native Sheet Style) -->
-      <div id="mobile-drawer" class="md:hidden hidden bg-[#0F172A]/98 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-5 space-y-1.5 transition-all duration-200 shadow-2xl">
-        <a href="#home" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 active:bg-slate-800 transition-colors">
+      <div id="mobile-drawer" class="md:hidden hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 pt-3 pb-5 space-y-1.5 transition-all duration-200 shadow-xl">
+        <a href="#home" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           Home
         </a>
-        <a href="#services" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 active:bg-slate-800 transition-colors">
+        <a href="#services" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           Services
         </a>
-        <a href="#about" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 active:bg-slate-800 transition-colors">
+        <a href="#projects" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
+          Projects
+        </a>
+        <a href="#about" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           About Us
         </a>
-        <a href="#contact" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:text-cyan-400 hover:bg-slate-800/80 active:bg-slate-800 transition-colors">
+        <a href="#contact" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           Contact Us
         </a>
         <div class="pt-2">
-          <a href="#contact" class="mobile-nav-link btn-native flex items-center justify-center min-h-[48px] w-full px-5 py-3 rounded-xl bg-[#10B981] active:bg-[#059669] text-white text-sm font-bold shadow-md shadow-emerald-950/40">
+          <a href="#contact" class="mobile-nav-link btn-native flex items-center justify-center min-h-[48px] w-full px-5 py-3 rounded-xl bg-[#10B981] active:bg-[#059669] text-white text-sm font-bold shadow-md shadow-emerald-600/20">
             Get a Quote
           </a>
         </div>
@@ -216,101 +262,100 @@
     <!-- ========================================== -->
     <!-- 2. HERO SECTION (HOME)                     -->
     <!-- ========================================== -->
-    <section id="home" class="relative overflow-hidden pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-22 border-b border-slate-800/70">
+    <section id="home" class="relative overflow-hidden pt-8 pb-12 sm:pt-14 sm:pb-18 lg:pt-16 lg:pb-20 border-b border-slate-200/80">
       
-      <!-- Subtle Radial Gradient Accent Glow -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(6,182,212,0.12),rgba(37,99,235,0.06),transparent_65%)] pointer-events-none"></div>
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[550px] h-[350px] bg-cyan-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <!-- Subtle Glassy Ambient Glow Accents -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(6,182,212,0.07),rgba(37,99,235,0.04),transparent_65%)] pointer-events-none"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-100/50 blur-[110px] rounded-full pointer-events-none"></div>
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center flex flex-col items-center space-y-4 sm:space-y-6 max-w-4xl mx-auto">
           
           <!-- Corporate Status Pill -->
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-850/90 border border-slate-700/80 text-[11px] font-medium text-slate-300 shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-[#06B6D4] animate-pulse"></span>
-            <span class="text-cyan-400 font-semibold">Registered ICT Agency</span>
-            <span class="text-slate-500">•</span>
-            <span class="text-slate-300">RC Certified &amp; Tax Compliant</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 border border-slate-200 text-[11px] font-medium text-slate-700 shadow-sm backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+            <span class="text-blue-700 font-bold">Registered ICT Agency</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-600">RC Certified &amp; Tax Compliant</span>
           </div>
 
           <!-- Main Heading -->
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.2]">
-            Engineering Smarter Business Ecosystems with <span class="bg-gradient-to-r from-[#06B6D4] via-[#38BDF8] to-[#2563EB] bg-clip-text text-transparent">AI &amp; Automation.</span>
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.2]">
+            Engineering Smarter Business Ecosystems with <span class="bg-gradient-to-r from-[#0891B2] via-[#2563EB] to-[#1D4ED8] bg-clip-text text-transparent">AI &amp; Automation.</span>
           </h1>
 
           <!-- Subheading -->
-          <p class="max-w-2xl text-sm sm:text-base lg:text-lg text-slate-300 font-normal leading-relaxed">
+          <p class="max-w-2xl text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed">
             Rock Wave Digital Enterprise is a fully registered, forward-thinking ICT agency. We specialize in building secure web architectures, high-performance mobile apps, custom automation pipelines, and supplying corporate enterprise hardware.
           </p>
 
           <!-- Action Buttons: Centered, Compact, Same-Line on Tablet & Desktop -->
           <div class="flex flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto">
-            <a href="#contact" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40 hover:shadow-emerald-500/20 transition-all">
+            <a href="#contact" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all">
               <span>Book a Consultation</span>
               <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
 
-            <a href="#services" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl border border-slate-700 hover:border-[#06B6D4] text-slate-200 hover:text-white hover:bg-slate-800/60 font-semibold text-xs sm:text-sm flex items-center justify-center transition-all">
-              View Services
+            <a href="#projects" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl border border-slate-300 hover:border-blue-500 bg-white/80 hover:bg-white text-slate-700 hover:text-blue-600 font-semibold text-xs sm:text-sm flex items-center justify-center shadow-sm transition-all">
+              View Projects
             </a>
           </div>
 
-          <!-- REDUCED HERO METRICS BAR: All On The Same Line on Desktop, Compact & Sleek -->
+          <!-- REDUCED HERO METRICS BAR: All On The Same Line on Desktop, Compact & Sleek Glass -->
           <div class="w-full max-w-4xl pt-4 sm:pt-6">
-            <!-- Single unified line bar on tablet/desktop (sm+), compact native pill row on mobile -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5 p-1.5 sm:p-2 bg-slate-900/80 backdrop-blur-md rounded-2xl border border-slate-800 shadow-inner">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5 p-1.5 sm:p-2 bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/90 shadow-sm">
               
               <!-- Metric 1 -->
-              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-850/60 border border-slate-800/80 text-left">
-                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 shrink-0">
+              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60 text-left">
+                <div class="w-8 h-8 rounded-lg bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-700 shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-cyan-400 font-semibold block truncate">Infrastructure</span>
-                  <span class="text-xs sm:text-sm font-bold text-white block truncate">99.9% Uptime</span>
+                  <span class="text-[10px] font-mono uppercase text-cyan-700 font-bold block truncate">Infrastructure</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">99.9% Uptime</span>
                 </div>
               </div>
 
               <!-- Metric 2 -->
-              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-850/60 border border-slate-800/80 text-left">
-                <div class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 shrink-0">
+              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60 text-left">
+                <div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-700 shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-blue-400 font-semibold block truncate">Architecture</span>
-                  <span class="text-xs sm:text-sm font-bold text-white block truncate">Zero-Trust Sec</span>
+                  <span class="text-[10px] font-mono uppercase text-blue-700 font-bold block truncate">Architecture</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Zero-Trust Sec</span>
                 </div>
               </div>
 
               <!-- Metric 3 -->
-              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-850/60 border border-slate-800/80 text-left">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0">
+              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60 text-left">
+                <div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700 shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-emerald-400 font-semibold block truncate">Efficiency</span>
-                  <span class="text-xs sm:text-sm font-bold text-white block truncate">Auto Pipelines</span>
+                  <span class="text-[10px] font-mono uppercase text-emerald-700 font-bold block truncate">Efficiency</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Auto Pipelines</span>
                 </div>
               </div>
 
               <!-- Metric 4 -->
-              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-850/60 border border-slate-800/80 text-left">
-                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 shrink-0">
+              <div class="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl bg-slate-50/80 border border-slate-200/60 text-left">
+                <div class="w-8 h-8 rounded-lg bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-700 shrink-0">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-amber-400 font-semibold block truncate">Procurement</span>
-                  <span class="text-xs sm:text-sm font-bold text-white block truncate">Enterprise B2B</span>
+                  <span class="text-[10px] font-mono uppercase text-amber-700 font-bold block truncate">Procurement</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Enterprise B2B</span>
                 </div>
               </div>
 
@@ -324,18 +369,18 @@
     <!-- ========================================== -->
     <!-- 3. CORE SERVICES PILLARS (SERVICES)        -->
     <!-- ========================================== -->
-    <section id="services" class="py-12 sm:py-16 lg:py-20 bg-[#0F172A] relative">
+    <section id="services" class="py-12 sm:py-16 lg:py-20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Compact Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 text-[11px] font-mono font-bold tracking-wider uppercase border border-cyan-500/20">
+          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-cyan-50 text-cyan-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-cyan-200">
             Core Competencies
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Specialized Technology Solutions
           </h2>
-          <p class="text-slate-400 text-xs sm:text-sm">
+          <p class="text-slate-600 text-xs sm:text-sm">
             High-performance digital engineering and institutional ICT procurement built for modern enterprises.
           </p>
         </div>
@@ -344,88 +389,88 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           
           <!-- Card 1: Advanced Automation & AI Engines -->
-          <div class="service-card bg-slate-850/90 border border-slate-750 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+          <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-100/40 rounded-bl-full pointer-events-none group-hover:bg-cyan-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl mb-3.5 text-cyan-400">
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-xl mb-3.5 text-cyan-600">
                 ⚙️
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors leading-snug">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
                 Advanced Automation &amp; AI Engines
               </h3>
-              <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed">
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
                 We eliminate repetitive business tasks by developing custom background workflows, robust webhooks, and intelligent AI models tailored to your operations.
               </p>
             </div>
-            <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-              <span class="text-cyan-400 font-medium">AI &amp; Workflows</span>
-              <a href="#contact" class="text-slate-200 hover:text-cyan-400 flex items-center gap-1 font-sans font-bold py-1">
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-cyan-700 font-semibold">AI &amp; Workflows</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
                 Inquire &rarr;
               </a>
             </div>
           </div>
 
           <!-- Card 2: Web & Mobile App Development -->
-          <div class="service-card bg-slate-850/90 border border-slate-750 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-bl-full pointer-events-none group-hover:bg-blue-500/10 transition-colors"></div>
+          <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-blue-100/40 rounded-bl-full pointer-events-none group-hover:bg-blue-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-xl mb-3.5 text-blue-400">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-xl mb-3.5 text-blue-600">
                 💻
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-snug">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
                 Web &amp; Mobile App Development
               </h3>
-              <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed">
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
                 We engineer secure, responsive, mobile-first applications and high-traffic fintech, utility, and retail web portals optimized for flawless scaling.
               </p>
             </div>
-            <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-              <span class="text-blue-400 font-medium">Fintech &amp; Apps</span>
-              <a href="#contact" class="text-slate-200 hover:text-blue-400 flex items-center gap-1 font-sans font-bold py-1">
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-blue-700 font-semibold">Fintech &amp; Apps</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
                 Inquire &rarr;
               </a>
             </div>
           </div>
 
           <!-- Card 3: ICT Consultation & Tech Strategy -->
-          <div class="service-card bg-slate-850/90 border border-slate-750 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-colors"></div>
+          <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-100/40 rounded-bl-full pointer-events-none group-hover:bg-cyan-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-xl mb-3.5 text-cyan-400">
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-xl mb-3.5 text-cyan-600">
                 🏢
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors leading-snug">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
                 ICT Consultation &amp; Tech Strategy
               </h3>
-              <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed">
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
                 We audit infrastructure, optimize active tech stacks, and blueprint technology scaling maps for corporate enterprises.
               </p>
             </div>
-            <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-              <span class="text-cyan-400 font-medium">Audits &amp; Maps</span>
-              <a href="#contact" class="text-slate-200 hover:text-cyan-400 flex items-center gap-1 font-sans font-bold py-1">
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-cyan-700 font-semibold">Audits &amp; Maps</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
                 Inquire &rarr;
               </a>
             </div>
           </div>
 
           <!-- Card 4: Infrastructural Supply & Gadget Procurement -->
-          <div class="service-card bg-slate-850/90 border border-slate-750 rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+          <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-100/40 rounded-bl-full pointer-events-none group-hover:bg-emerald-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-xl mb-3.5 text-emerald-400">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-xl mb-3.5 text-emerald-600">
                 🔌
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors leading-snug">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors leading-snug">
                 Infrastructural Supply &amp; Procurement
               </h3>
-              <p class="text-slate-300 text-xs sm:text-[13px] leading-relaxed">
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
                 B2B corporate procurement of high-end engineering workstations, server racks, secure networking hardware, and institutional equipment.
               </p>
             </div>
-            <div class="mt-5 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-              <span class="text-emerald-400 font-medium">B2B Hardware</span>
-              <a href="#contact" class="text-slate-200 hover:text-emerald-400 flex items-center gap-1 font-sans font-bold py-1">
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-emerald-700 font-semibold">B2B Hardware</span>
+              <a href="#contact" class="text-emerald-600 hover:text-emerald-800 flex items-center gap-1 font-sans font-bold py-1">
                 Inquire &rarr;
               </a>
             </div>
@@ -437,77 +482,237 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 4. ABOUT US SECTION                        -->
+    <!-- 4. FEATURED PROJECTS / CASE STUDIES        -->
+    <!-- (Interactive Tappable Modal Popups)        -->
     <!-- ========================================== -->
-    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-slate-900 border-y border-slate-800/80 relative">
+    <section id="projects" class="py-12 sm:py-16 lg:py-20 bg-white/60 border-y border-slate-200/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
+            Case Studies &amp; Track Record
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Selected Projects We Have Delivered
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm">
+            Tap any project below to preview the architectural challenge, solution built, and performance outcome.
+          </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+
+          <!-- Project 1: RockPay Core Infrastructure -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="rockpay"
+            role="button"
+            tabindex="0"
+            aria-label="View RockPay Nigeria details"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-blue-50 text-blue-700 border border-blue-200">
+                  Fintech Engine
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Live In Production</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
+                RockPay Nigeria
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
+                High-volume bill payments gateway, utility token dispersion, and real-time wallet settlement engine built for institutional reliability.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">React • Node • Postgres</span>
+              <div class="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-600 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: ApexLogix AI Automation Engine -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="apexlogix"
+            role="button"
+            tabindex="0"
+            aria-label="View ApexLogix AI Automation details"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-cyan-50 text-cyan-700 border border-cyan-200">
+                  AI &amp; Workflows
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Enterprise ERP</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
+                ApexLogix AI Workflows
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
+                Custom enterprise pipeline eliminating 85% of manual invoice sorting via optical document recognition and automated accounting sync.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">Python • FastAPI • AI</span>
+              <div class="w-8 h-8 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: MediPulse Telehealth & Clinic Portal -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="medipulse"
+            role="button"
+            tabindex="0"
+            aria-label="View MediPulse Telehealth details"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  HealthTech App
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Multi-Clinic</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-1.5 leading-snug">
+                MediPulse Clinical Suite
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
+                NDPR-compliant patient records system, encrypted virtual consultations, and integrated laboratory test result dispatching.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">React Native • WebRTC</span>
+              <div class="w-8 h-8 rounded-full bg-emerald-50 group-hover:bg-emerald-600 text-emerald-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: GovTrack Statutory Licensing Portal -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="govtrack"
+            role="button"
+            tabindex="0"
+            aria-label="View GovTrack Institutional Portal details"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-amber-50 text-amber-800 border border-amber-200">
+                  GovTech &amp; Cloud
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Statutory Portal</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors mb-1.5 leading-snug">
+                GovTrack Regulatory Portal
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
+                Centralized registry for business permits, automated identity verification, QR-coded electronic certificate generation, and audit logging.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">Next.js • Prisma • Redis</span>
+              <div class="w-8 h-8 rounded-full bg-amber-50 group-hover:bg-amber-600 text-amber-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. ABOUT US SECTION                        -->
+    <!-- ========================================== -->
+    <section id="about" class="py-12 sm:py-16 lg:py-20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Copy Column -->
           <div class="lg:col-span-7 space-y-4 sm:space-y-5">
-            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-500/20">
+            <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
               Company Overview
             </div>
             
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
               Where Deep Engineering Meets Reliability.
             </h2>
 
-            <p class="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+            <p class="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
               At Rock Wave Digital Enterprise, we bridge the gap between complex software architecture and real-world business efficiency. As a legally registered enterprise, our team combines elite programming expertise with rigorous systems consulting. From high-integrity systems like RockPay to custom corporate software portals, we construct digital solutions that protect data, handle transactions smoothly, and accelerate growth.
             </p>
 
-            <!-- 3 Core Values: Clean, compact horizontal row -->
+            <!-- 3 Core Values: Clean, compact horizontal row in glassy cards -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-              <div class="p-3.5 rounded-xl bg-slate-850 border border-slate-800">
-                <div class="text-[#06B6D4] font-bold text-sm mb-1">01. Precision</div>
-                <p class="text-[11px] text-slate-400 leading-normal">Strict architectural patterns built for high-throughput scaling.</p>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <div class="text-cyan-700 font-bold text-sm mb-1">01. Precision</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Strict architectural patterns built for high-throughput scaling.</p>
               </div>
-              <div class="p-3.5 rounded-xl bg-slate-850 border border-slate-800">
-                <div class="text-[#2563EB] font-bold text-sm mb-1">02. Integrity</div>
-                <p class="text-[11px] text-slate-400 leading-normal">Audited security, statutory compliance, and data governance.</p>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <div class="text-blue-700 font-bold text-sm mb-1">02. Integrity</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Audited security, statutory compliance, and data governance.</p>
               </div>
-              <div class="p-3.5 rounded-xl bg-slate-850 border border-slate-800">
-                <div class="text-[#10B981] font-bold text-sm mb-1">03. Velocity</div>
-                <p class="text-[11px] text-slate-400 leading-normal">Rapid deployment cycles backed by automated CI/CD pipelines.</p>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <div class="text-emerald-700 font-bold text-sm mb-1">03. Velocity</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Rapid deployment cycles backed by automated CI/CD pipelines.</p>
               </div>
             </div>
           </div>
 
-          <!-- Feature Graphic / Enterprise Box: Compact & Refined -->
+          <!-- Feature Graphic / Enterprise Box: Glassy White Card -->
           <div class="lg:col-span-5">
-            <div class="bg-gradient-to-br from-slate-850 to-slate-900 border border-slate-750 rounded-2xl p-5 sm:p-6 shadow-xl relative overflow-hidden">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+            <div class="glass-card rounded-2xl p-5 sm:p-6 shadow-xl relative overflow-hidden border border-slate-200/90">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                 <div class="flex items-center gap-1.5">
-                  <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
                 </div>
-                <span class="text-[10px] font-mono text-cyan-400 font-semibold">rockwave.enterprise.sys</span>
+                <span class="text-[10px] font-mono text-blue-600 font-bold">rockwave.enterprise.sys</span>
               </div>
 
-              <div class="space-y-2.5 font-mono text-xs text-slate-300">
-                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800">
-                  <span class="text-slate-400">Entity Status:</span>
-                  <span class="text-emerald-400 font-bold">✓ Registered &amp; Active</span>
+              <div class="space-y-2.5 font-mono text-xs text-slate-700">
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
+                  <span class="text-slate-500">Entity Status:</span>
+                  <span class="text-emerald-700 font-bold">✓ Registered &amp; Active</span>
                 </div>
-                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800">
-                  <span class="text-slate-400">Flagship Proven Stack:</span>
-                  <span class="text-cyan-400 font-semibold">RockPay Nigeria Core</span>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
+                  <span class="text-slate-500">Flagship Proven Stack:</span>
+                  <span class="text-blue-700 font-semibold">RockPay Nigeria Core</span>
                 </div>
-                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800">
-                  <span class="text-slate-400">Core Disciplines:</span>
-                  <span class="text-white">AI • Dev • Cloud • Hardware</span>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
+                  <span class="text-slate-500">Core Disciplines:</span>
+                  <span class="text-slate-900 font-semibold">AI • Dev • Cloud • Hardware</span>
                 </div>
-                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800">
-                  <span class="text-slate-400">Operating Corridor:</span>
-                  <span class="text-slate-200">Abuja FCT / Nasarawa</span>
+                <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
+                  <span class="text-slate-500">Operating Corridor:</span>
+                  <span class="text-slate-800">Abuja FCT / Nasarawa</span>
                 </div>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-slate-800 text-center">
-                <a href="#contact" class="btn-native inline-flex items-center justify-center min-h-[44px] w-full px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-750 border border-cyan-500/30 text-cyan-400 hover:text-cyan-300 font-bold text-xs transition-all">
+              <div class="mt-4 pt-3 border-t border-slate-100 text-center">
+                <a href="#contact" class="btn-native inline-flex items-center justify-center min-h-[44px] w-full px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 font-bold text-xs transition-all">
                   Partner with Rock Wave &rarr;
                 </a>
               </div>
@@ -520,44 +725,44 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 5. CONTACT US INTAKE PORTAL                -->
+    <!-- 6. CONTACT US INTAKE PORTAL                -->
     <!-- ========================================== -->
-    <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-[#0F172A] relative overflow-hidden">
+    <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-white/70 border-t border-slate-200/80 relative overflow-hidden">
       
       <!-- Subtle Glow Accent -->
-      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-200/30 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <!-- Header -->
         <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-mono font-bold tracking-wider uppercase border border-emerald-500/20">
+          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-emerald-200">
             Intake Portal
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Let’s Automate Your Growth.
           </h2>
-          <p class="text-slate-300 text-xs sm:text-sm">
-            Ready to scale your operations or buy enterprise hardware? Drop your details below.
+          <p class="text-slate-600 text-xs sm:text-sm">
+            Ready to scale your operations or procure enterprise hardware? Drop your details below.
           </p>
         </div>
 
-        <!-- Intake Form Container: Compact, Sleek, Native App Aesthetic -->
-        <div class="bg-slate-850/95 border border-slate-750 rounded-2xl p-5 sm:p-8 shadow-2xl backdrop-blur-sm">
+        <!-- Intake Form Container: Glassy White App Aesthetic -->
+        <div class="glass-card rounded-2xl p-5 sm:p-8 shadow-xl border border-slate-200/90">
           
           <!-- Success Confirmation Banner -->
-          <div id="form-success-banner" class="hidden mb-6 p-5 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-emerald-200 space-y-2">
+          <div id="form-success-banner" class="hidden mb-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2">
             <div class="flex items-center gap-2.5">
-              <div class="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-sm">
+              <div class="w-7 h-7 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm">
                 ✓
               </div>
-              <h4 class="font-bold text-base text-white">Project Inquiry Received</h4>
+              <h4 class="font-bold text-base text-slate-900">Project Inquiry Received</h4>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 pl-9">
+            <p class="text-xs sm:text-sm text-slate-700 pl-9">
               Thank you! Your brief has been transmitted to our engineering desk. A solutions architect will reach out to you within 2 business hours via your provided email or WhatsApp line.
             </p>
             <div class="pl-9 pt-1">
-              <button id="btn-submit-another" type="button" class="text-xs font-mono font-bold text-emerald-400 underline hover:text-emerald-300 cursor-pointer">
+              <button id="btn-submit-another" type="button" class="text-xs font-mono font-bold text-emerald-700 underline hover:text-emerald-800 cursor-pointer">
                 Submit Another Inquiry
               </button>
             </div>
@@ -569,8 +774,8 @@
               
               <!-- 1. Full Name / Company Name -->
               <div class="space-y-1.5">
-                <label for="fullName" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300">
-                  Full Name / Company Name <span class="text-red-400">*</span>
+                <label for="fullName" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                  Full Name / Company Name <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -578,14 +783,14 @@
                   name="fullName"
                   required
                   placeholder="e.g., Alex Johnson"
-                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-slate-900 text-white text-sm placeholder-slate-500"
+                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
               </div>
 
               <!-- 2. Business Email Address -->
               <div class="space-y-1.5">
-                <label for="email" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300">
-                  Business Email Address <span class="text-red-400">*</span>
+                <label for="email" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                  Business Email Address <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
@@ -593,7 +798,7 @@
                   name="email"
                   required
                   placeholder="name@company.com"
-                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-slate-900 text-white text-sm placeholder-slate-500"
+                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
               </div>
 
@@ -603,8 +808,8 @@
               
               <!-- 3. WhatsApp / Phone Number -->
               <div class="space-y-1.5">
-                <label for="phone" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300">
-                  WhatsApp / Phone Number <span class="text-red-400">*</span>
+                <label for="phone" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                  WhatsApp / Phone Number <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="tel"
@@ -612,21 +817,21 @@
                   name="phone"
                   required
                   placeholder="+234 803 000 0000"
-                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-slate-900 text-white text-sm placeholder-slate-500"
+                  class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
               </div>
 
               <!-- 4. Service Needed -->
               <div class="space-y-1.5">
-                <label for="service" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300">
-                  Service Needed <span class="text-red-400">*</span>
+                <label for="service" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                  Service Needed <span class="text-red-500">*</span>
                 </label>
                 <div class="relative">
                   <select
                     id="service"
                     name="service"
                     required
-                    class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-slate-900 text-white text-sm appearance-none cursor-pointer pr-10"
+                    class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm appearance-none cursor-pointer pr-10"
                   >
                     <option value="" disabled selected>Select an enterprise service</option>
                     <option value="Custom Software/Apps">Custom Software/Apps</option>
@@ -634,7 +839,7 @@
                     <option value="IT Consultation">IT Consultation</option>
                     <option value="ICT Hardware Supply">ICT Hardware Supply</option>
                   </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -646,8 +851,8 @@
 
             <!-- 5. Project Brief / Message -->
             <div class="space-y-1.5">
-              <label for="message" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300">
-                Project Brief / Message <span class="text-red-400">*</span>
+              <label for="message" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                Project Brief / Message <span class="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
@@ -655,7 +860,7 @@
                 required
                 rows="3"
                 placeholder="Describe your project, software goals, or hardware procurement requirements..."
-                class="custom-input w-full p-3.5 rounded-xl bg-slate-900 text-white text-sm placeholder-slate-500 resize-y"
+                class="custom-input w-full p-3.5 rounded-xl text-slate-900 text-sm placeholder-slate-400 resize-y"
               ></textarea>
             </div>
 
@@ -664,7 +869,7 @@
               <button
                 id="submit-btn"
                 type="submit"
-                class="btn-native w-full min-h-[48px] px-6 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-md shadow-emerald-950/40 hover:shadow-emerald-500/20 transition-all cursor-pointer"
+                class="btn-native w-full min-h-[48px] px-6 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all cursor-pointer"
               >
                 <span id="btn-text">Launch Project Inquiry &#10140;</span>
                 <svg id="btn-spinner" class="animate-spin -ml-1 mr-3 h-4 w-4 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -674,7 +879,7 @@
               </button>
             </div>
 
-            <div class="text-center text-[10px] sm:text-[11px] text-slate-400 font-mono">
+            <div class="text-center text-[10px] sm:text-[11px] text-slate-500 font-mono">
               🔒 Enterprise Privacy Guarantee • Data encrypted &amp; shared strictly under NDA.
             </div>
 
@@ -686,25 +891,25 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 6. MINIMALIST TRUST FOOTER                 -->
+    <!-- 7. MINIMALIST TRUST FOOTER                 -->
     <!-- ========================================== -->
-    <footer class="mt-auto bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-6 sm:py-8">
+    <footer class="mt-auto bg-white border-t border-slate-200 text-slate-500 text-xs py-6 sm:py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           
           <!-- Left: Copyright -->
-          <div class="text-slate-400 font-medium">
+          <div class="text-slate-600 font-medium">
             &copy; 2026 Rock Wave Digital Enterprise. All rights reserved.
           </div>
 
           <!-- Center: Agency Descriptor -->
-          <div class="text-slate-300 font-medium flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#06B6D4]"></span>
+          <div class="text-slate-700 font-medium flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
             <span>Registered ICT and Software Engineering Agency.</span>
           </div>
 
           <!-- Right: Operational Zone -->
-          <div class="text-slate-400 font-mono text-[11px]">
+          <div class="text-slate-500 font-mono text-[11px]">
             Abuja FCT / Nasarawa Corridor Operational Zone.
           </div>
 
@@ -713,47 +918,329 @@
     </footer>
 
     <!-- ========================================== -->
-    <!-- 7. MOBILE NATIVE APP BOTTOM DOCK / TAB BAR -->
+    <!-- 8. CASE STUDY MODAL POPUP                  -->
+    <!-- (Interactive, Responsive, Beautiful)       -->
+    <!-- ========================================== -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <!-- Backdrop with Frosted Blur -->
+      <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
+
+      <!-- Modal Card -->
+      <div class="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden z-10 modal-animate-enter max-h-[90vh] flex flex-col">
+        
+        <!-- Header with Close Icon (min 48px touch target) -->
+        <div class="px-5 sm:px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+          <div class="flex items-center gap-2">
+            <span id="modal-category" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-blue-50 text-blue-700 border border-blue-200">
+              Fintech Engine
+            </span>
+            <span id="modal-status" class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              Live Production
+            </span>
+          </div>
+
+          <!-- Close / Cancel Icon Button -->
+          <button 
+            id="modal-close-btn" 
+            type="button" 
+            class="min-h-[48px] min-w-[48px] flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-200/60 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Close modal"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Scrollable Modal Body -->
+        <div class="px-5 sm:px-6 py-5 overflow-y-auto space-y-4 text-left">
+          <div>
+            <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-1">
+              RockPay Nigeria Core
+            </h3>
+            <p id="modal-subtitle" class="text-xs sm:text-sm text-slate-500 font-medium">
+              National Bill Payment &amp; Automated Microtransactions Infrastructure
+            </p>
+          </div>
+
+          <!-- The Challenge / Context -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+            <span class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-1">The Architecture Challenge</span>
+            <p id="modal-challenge" class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              Handling peak-hour utility purchases (electricity tokens, bulk airtime, data subscriptions) without double debits or dropped webhook events.
+            </p>
+          </div>
+
+          <!-- What Rock Wave Built -->
+          <div>
+            <span class="text-[10px] font-mono uppercase font-bold text-blue-700 block mb-2">What Rock Wave Delivered</span>
+            <ul id="modal-highlights" class="space-y-2 text-xs sm:text-sm text-slate-700">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div>
+            <span class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-2">Engineered Tech Stack</span>
+            <div id="modal-techstack" class="flex flex-wrap gap-1.5">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Metrics / Results -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+            <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-200/70 text-center">
+              <span id="modal-metric-1-val" class="block font-extrabold text-cyan-800 text-base sm:text-lg">99.98%</span>
+              <span id="modal-metric-1-lbl" class="text-[10px] font-mono text-cyan-700 uppercase font-semibold">Uptime</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200/70 text-center">
+              <span id="modal-metric-2-val" class="block font-extrabold text-blue-800 text-base sm:text-lg">&lt; 180ms</span>
+              <span id="modal-metric-2-lbl" class="text-[10px] font-mono text-blue-700 uppercase font-semibold">Token Latency</span>
+            </div>
+            <div class="col-span-2 sm:col-span-1 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200/70 text-center">
+              <span id="modal-metric-3-val" class="block font-extrabold text-emerald-800 text-base sm:text-lg">Zero</span>
+              <span id="modal-metric-3-lbl" class="text-[10px] font-mono text-emerald-700 uppercase font-semibold">Ledger Drift</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer with Call to Action -->
+        <div class="px-5 sm:px-6 py-3.5 border-t border-slate-100 bg-slate-50/80 flex items-center justify-between gap-3">
+          <button id="modal-cancel-btn" type="button" class="btn-native min-h-[44px] px-4 py-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-xl hover:bg-slate-200/60">
+            Close
+          </button>
+
+          <a id="modal-cta-btn" href="#contact" class="btn-native min-h-[44px] px-5 py-2.5 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 flex items-center gap-1.5">
+            <span>Request Similar System</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 9. MOBILE NATIVE APP BOTTOM DOCK / TAB BAR -->
     <!-- (iOS / Android Native App Feel on Mobile)  -->
     <!-- ========================================== -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-dock border-t border-slate-800/90 px-3 py-1.5 flex items-center justify-around shadow-2xl">
-      <a href="#home" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[56px] py-1 text-slate-400 hover:text-cyan-400 active:scale-95 transition-all">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-dock px-3 py-1.5 flex items-center justify-around shadow-2xl">
+      <a href="#home" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[50px] py-1 text-slate-500 hover:text-blue-600 active:scale-95 transition-all">
         <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
         <span class="text-[10px] font-semibold">Home</span>
       </a>
 
-      <a href="#services" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[56px] py-1 text-slate-400 hover:text-cyan-400 active:scale-95 transition-all">
+      <a href="#services" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[50px] py-1 text-slate-500 hover:text-blue-600 active:scale-95 transition-all">
         <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
         </svg>
         <span class="text-[10px] font-semibold">Services</span>
       </a>
 
-      <a href="#about" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[56px] py-1 text-slate-400 hover:text-cyan-400 active:scale-95 transition-all">
+      <a href="#projects" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[50px] py-1 text-slate-500 hover:text-blue-600 active:scale-95 transition-all">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        <span class="text-[10px] font-semibold">Projects</span>
+      </a>
+
+      <a href="#about" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[50px] py-1 text-slate-500 hover:text-blue-600 active:scale-95 transition-all">
         <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
         <span class="text-[10px] font-semibold">About</span>
       </a>
 
-      <a href="#contact" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[64px] py-1 text-emerald-400 active:scale-95 transition-all">
-        <div class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center gap-1">
-          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="#contact" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[58px] py-1 text-emerald-600 active:scale-95 transition-all">
+        <div class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
-          <span class="text-[10px] font-bold text-white">Quote</span>
+          <span class="text-[10px] font-bold text-emerald-700">Quote</span>
         </div>
       </a>
     </div>
 
     <!-- ========================================== -->
-    <!-- INTERACTIVE VANILLA JAVASCRIPT             -->
+    <!-- INTERACTIVE JAVASCRIPT & MODAL LOGIC       -->
     <!-- ========================================== -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // 1. Mobile Menu Drawer Toggle
+        // Project Database for Modal Details
+        const projectData = {
+          rockpay: {
+            title: 'RockPay Nigeria Core',
+            subtitle: 'National Bill Payment & Automated Microtransactions Infrastructure',
+            category: 'Fintech Engine',
+            status: 'Live Production',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'High concurrency during evening peak payment hours resulted in delayed token generation and reconciliation mismatches across legacy utility aggregators.',
+            highlights: [
+              'Designed a fault-tolerant message queue architecture handling 50,000+ daily electricity token and VTU airtime dispatches.',
+              'Implemented cryptographic double-entry ledger bookkeeping to guarantee zero transaction loss during network partitions.',
+              'Integrated automated multi-provider failover routing ensuring 99.98% transaction success rates.'
+            ],
+            techStack: ['Node.js', 'PostgreSQL', 'Redis Queue', 'Docker', 'React', 'Tailwind CSS', 'Paystack API'],
+            metrics: [
+              { val: '99.98%', label: 'Uptime' },
+              { val: '< 180ms', label: 'Token Latency' },
+              { val: 'Zero', label: 'Ledger Drift' }
+            ]
+          },
+          apexlogix: {
+            title: 'ApexLogix AI Workflows',
+            subtitle: 'Automated Invoice Processing & Multi-Tier Enterprise Approval Pipeline',
+            category: 'AI & Automation',
+            status: 'Enterprise Deployed',
+            servicePreselect: 'AI & Workflow Automation',
+            challenge: 'Enterprise finance officers were losing 20+ hours each week manually keying PDF vendor invoices, verifying tax IDs, and chasing department approval signatures.',
+            highlights: [
+              'Trained a custom multimodal AI document extraction engine achieving 99.4% precision on unstructured vendor invoices.',
+              'Engineered bi-directional webhooks syncing approved expenditures into client ERP and banking disbursement queues.',
+              'Automated audit compliance reporting with cryptographic timestamping for corporate regulatory readiness.'
+            ],
+            techStack: ['Python', 'FastAPI', 'Gemini Vision AI', 'Celery', 'PostgreSQL', 'Vue 3', 'Docker'],
+            metrics: [
+              { val: '85%', label: 'Time Saved' },
+              { val: '99.4%', label: 'AI Accuracy' },
+              { val: '2.5 mins', label: 'Cycle Time' }
+            ]
+          },
+          medipulse: {
+            title: 'MediPulse Clinical Suite',
+            subtitle: 'Telehealth Consultations & Electronic Health Records Management',
+            category: 'HealthTech App',
+            status: 'Multi-Clinic Active',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'Private multi-branch clinics required a unified patient consultation and lab results portal compliant with NDPR and healthcare confidentiality frameworks.',
+            highlights: [
+              'Built end-to-end encrypted WebRTC video consultation rooms with responsive in-call prescription writer.',
+              'Architected fine-grained role-based access control (RBAC) separating doctor medical charts from front-desk billing records.',
+              'Created instant SMS and WhatsApp automated appointment reminder bots that reduced patient no-show rates by 42%.'
+            ],
+            techStack: ['React Native', 'TypeScript', 'WebRTC', 'Node.js', 'PostgreSQL', 'AWS S3', 'Redis'],
+            metrics: [
+              { val: '42%', label: 'No-Show Cut' },
+              { val: '100%', label: 'NDPR Safe' },
+              { val: '14 Clinics', label: 'Connected' }
+            ]
+          },
+          govtrack: {
+            title: 'GovTrack Regulatory Portal',
+            subtitle: 'Institutional Business Licensing & Electronic Certificate Registry',
+            category: 'GovTech & Cloud',
+            status: 'Statutory Deployed',
+            servicePreselect: 'IT Consultation',
+            challenge: 'Public agencies faced long queue lines, lost paper documentation, and manual stamp validation issues when issuing trade licenses and annual permits.',
+            highlights: [
+              'Architected a cloud-native citizen self-service intake portal processing statutory licensing fees and document verification.',
+              'Implemented cryptographic QR verification certificates readable by enforcement officers on mobile devices in offline mode.',
+              'Engineered high-security administrative consoles with tamper-evident audit trails and multi-factor biometric authentication.'
+            ],
+            techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma ORM', 'Redis', 'Tailwind CSS', 'Docker'],
+            metrics: [
+              { val: '10x Faster', label: 'Turnaround' },
+              { val: '100% Digital', label: 'Paperless' },
+              { val: 'Zero Fraud', label: 'Tamper-Proof' }
+            ]
+          }
+        };
+
+        // Modal Elements
+        const modal = document.getElementById('project-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalCancelBtn = document.getElementById('modal-cancel-btn');
+        const modalCtaBtn = document.getElementById('modal-cta-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        function openModal(projectId) {
+          const data = projectData[projectId];
+          if (!data) return;
+
+          document.getElementById('modal-title').textContent = data.title;
+          document.getElementById('modal-subtitle').textContent = data.subtitle;
+          document.getElementById('modal-category').textContent = data.category;
+          document.getElementById('modal-challenge').textContent = data.challenge;
+
+          // Highlights
+          const highlightsList = document.getElementById('modal-highlights');
+          highlightsList.innerHTML = '';
+          data.highlights.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start gap-2';
+            li.innerHTML = `
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>${item}</span>
+            `;
+            highlightsList.appendChild(li);
+          });
+
+          // Tech stack
+          const techContainer = document.getElementById('modal-techstack');
+          techContainer.innerHTML = '';
+          data.techStack.forEach(tech => {
+            const span = document.createElement('span');
+            span.className = 'px-2 py-0.5 rounded-md text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200';
+            span.textContent = tech;
+            techContainer.appendChild(span);
+          });
+
+          // Metrics
+          document.getElementById('modal-metric-1-val').textContent = data.metrics[0].val;
+          document.getElementById('modal-metric-1-lbl').textContent = data.metrics[0].label;
+          document.getElementById('modal-metric-2-val').textContent = data.metrics[1].val;
+          document.getElementById('modal-metric-2-lbl').textContent = data.metrics[1].label;
+          document.getElementById('modal-metric-3-val').textContent = data.metrics[2].val;
+          document.getElementById('modal-metric-3-lbl').textContent = data.metrics[2].label;
+
+          // Preselect service on CTA click
+          modalCtaBtn.onclick = () => {
+            closeModal();
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect && data.servicePreselect) {
+              serviceSelect.value = data.servicePreselect;
+            }
+          };
+
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+
+        projectCards.forEach(card => {
+          card.addEventListener('click', () => {
+            const projectId = card.getAttribute('data-project');
+            openModal(projectId);
+          });
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const projectId = card.getAttribute('data-project');
+              openModal(projectId);
+            }
+          });
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+        if (modalCancelBtn) modalCancelBtn.addEventListener('click', closeModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+          }
+        });
+
+        // Mobile Menu Drawer Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileDrawer = document.getElementById('mobile-drawer');
         const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -779,7 +1266,6 @@
           mobileMenuBtn.addEventListener('click', toggleMenu);
         }
 
-        // Auto close drawer when any link is clicked
         mobileLinks.forEach(link => {
           link.addEventListener('click', () => {
             if (!mobileDrawer.classList.contains('hidden')) {
@@ -788,14 +1274,7 @@
           });
         });
 
-        // Close drawer on ESC key
-        window.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && !mobileDrawer.classList.contains('hidden')) {
-            toggleMenu();
-          }
-        });
-
-        // 2. Active Tab Indicator in Mobile Dock on Scroll
+        // Active Tab Indicator in Mobile Dock on Scroll
         const sections = document.querySelectorAll('section[id]');
         const dockTabs = document.querySelectorAll('.mobile-dock-tab');
         window.addEventListener('scroll', () => {
@@ -811,17 +1290,17 @@
           if (currentId) {
             dockTabs.forEach(tab => {
               if (tab.getAttribute('href') === `#${currentId}`) {
-                tab.classList.add('text-cyan-400');
-                tab.classList.remove('text-slate-400');
+                tab.classList.add('text-blue-600');
+                tab.classList.remove('text-slate-500');
               } else if (tab.getAttribute('href') !== '#contact') {
-                tab.classList.remove('text-cyan-400');
-                tab.classList.add('text-slate-400');
+                tab.classList.remove('text-blue-600');
+                tab.classList.add('text-slate-500');
               }
             });
           }
         }, { passive: true });
 
-        // 3. Project Intake Form Submission Handling
+        // Project Intake Form Submission Handling
         const form = document.getElementById('project-intake-form');
         const submitBtn = document.getElementById('submit-btn');
         const btnText = document.getElementById('btn-text');
@@ -844,28 +1323,24 @@
               return;
             }
 
-            // Enter loading state
             btnText.textContent = 'Transmitting Inquiry...';
             btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-80');
 
             try {
-              // Attempt API submission if server endpoint is live
               await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ fullName, email, phone, service, message }),
               }).catch(() => null);
 
-              // Smooth native feedback transition
               setTimeout(() => {
                 btnSpinner.classList.add('hidden');
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-80');
                 btnText.innerHTML = 'Launch Project Inquiry &#10140;';
 
-                // Display success banner and reset form
                 form.reset();
                 form.classList.add('hidden');
                 successBanner.classList.remove('hidden');
