@@ -159,6 +159,27 @@
       .modal-animate-enter {
         animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
+
+      /* Floating Bell Wiggle */
+      @keyframes bellShake {
+        0%, 100% { transform: rotate(0deg); }
+        20% { transform: rotate(14deg); }
+        40% { transform: rotate(-12deg); }
+        60% { transform: rotate(8deg); }
+        80% { transform: rotate(-6deg); }
+      }
+      .bell-hover:hover .bell-icon {
+        animation: bellShake 0.75s ease-in-out infinite;
+      }
+      .bell-pulse {
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6);
+        animation: pulseRing 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      @keyframes pulseRing {
+        0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
+        70% { box-shadow: 0 0 0 14px rgba(6, 182, 212, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+      }
     </style>
   </head>
 
@@ -274,32 +295,32 @@
           <!-- Corporate Status Pill -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 border border-slate-200 text-[11px] font-medium text-slate-700 shadow-sm backdrop-blur-sm">
             <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
-            <span class="text-blue-700 font-bold">Registered ICT Agency</span>
+            <span class="text-blue-700 font-bold">Registered ICT Enterprise</span>
             <span class="text-slate-300">•</span>
-            <span class="text-slate-600">RC Certified &amp; Tax Compliant</span>
+            <span class="text-slate-600">You Imagine It — We Engineer It</span>
           </div>
 
           <!-- Main Heading -->
           <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.2]">
-            Engineering Smarter Business Ecosystems with <span class="bg-gradient-to-r from-[#0891B2] via-[#2563EB] to-[#1D4ED8] bg-clip-text text-transparent">AI &amp; Automation.</span>
+            Tell Us What You Have in Mind — <span class="bg-gradient-to-r from-[#0891B2] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">We Make It Real &amp; Keep You Happy.</span>
           </h1>
 
           <!-- Subheading -->
           <p class="max-w-2xl text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed">
-            Rock Wave Digital Enterprise is a fully registered, forward-thinking ICT agency. We specialize in building secure web architectures, high-performance mobile apps, custom automation pipelines, and supplying corporate enterprise hardware.
+            Got an idea for a fintech payment app, a school portal, an automated workflow, or enterprise IT setup? You share your vision in plain words — Rock Wave handles the code, architecture, and deployment so you smile with confidence.
           </p>
 
           <!-- Action Buttons: Centered, Compact, Same-Line on Tablet & Desktop -->
           <div class="flex flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto">
             <a href="#contact" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all">
-              <span>Book a Consultation</span>
+              <span>Tell Us Your Idea</span>
               <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
 
             <a href="#projects" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl border border-slate-300 hover:border-blue-500 bg-white/80 hover:bg-white text-slate-700 hover:text-blue-600 font-semibold text-xs sm:text-sm flex items-center justify-center shadow-sm transition-all">
-              View Projects
+              See Projects We Built Real
             </a>
           </div>
 
@@ -491,145 +512,189 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
           <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
-            Case Studies &amp; Track Record
+            Real Systems • Verified Track Record
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Selected Projects We Have Delivered
+            Proof of Work: Systems We Built &amp; Shipped
           </h2>
           <p class="text-slate-600 text-xs sm:text-sm">
-            Tap any project below to preview the architectural challenge, solution built, and performance outcome.
+            People trust real results. Tap any live project below to view full screenshots, architecture challenges, and delivery outcomes.
           </p>
         </div>
 
-        <!-- Projects Grid -->
+        <!-- Projects Grid With Real Pictures -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
-          <!-- Project 1: RockPay Core Infrastructure -->
+          <!-- Project 1: RockPay Bills Infrastructure & Receipts -->
           <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="rockpay"
+            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="rockpay_bills"
             role="button"
             tabindex="0"
-            aria-label="View RockPay Nigeria details"
+            aria-label="View RockPay Nigeria Bills & Receipts details"
           >
             <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-blue-50 text-blue-700 border border-blue-200">
+              <!-- Real Project Picture Preview -->
+              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
+                <img 
+                  src="/images/rockpay-bills.jpg" 
+                  alt="RockPay Bills Payment &amp; Receipt Architecture" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
                   Fintech Engine
-                </span>
-                <span class="text-[11px] text-slate-400 font-mono">Live In Production</span>
+                </div>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                  <span>Live Production</span>
+                </div>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
-                RockPay Nigeria
+
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
+                RockPay Bills &amp; Receipts
               </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
-                High-volume bill payments gateway, utility token dispersion, and real-time wallet settlement engine built for institutional reliability.
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
+                High-volume utility bill payments, instant electricity token dispensation, VTU data bundles, and multi-service receipt generation.
               </p>
             </div>
             
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">React • Node • Postgres</span>
-              <div class="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-600 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="text-[11px] text-slate-500 font-mono">React • Node • Paystack</span>
+              <div class="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-600 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: ApexLogix AI Automation Engine -->
+          <!-- Project 2: RockPay Mobile Wallet Dashboard -->
           <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
+            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="rockpay_wallet"
+            role="button"
+            tabindex="0"
+            aria-label="View RockPay Mobile Wallet details"
+          >
+            <div>
+              <!-- Real Project Picture Preview -->
+              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
+                <img 
+                  src="/images/rockpay-wallet.jpg" 
+                  alt="RockPay Mobile Digital Wallet Application" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
+                  Mobile Wallet
+                </div>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                  <span>Active App</span>
+                </div>
+              </div>
+
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
+                RockPay Mobile Wallet
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
+                iOS/Android digital wallet with dynamic balance privacy masking, instant Paystack funding, and one-tap QuickPay recurring presets.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">React Native • Redis</span>
+              <div class="w-7 h-7 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Weblines International High School -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="weblines_school"
+            role="button"
+            tabindex="0"
+            aria-label="View Weblines International High School portal details"
+          >
+            <div>
+              <!-- Real Project Picture Preview -->
+              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
+                <img 
+                  src="/images/weblines-school.jpg" 
+                  alt="Weblines International High School Educational Portal" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
+                  EdTech Portal
+                </div>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                  <span>weblines.netlify.app</span>
+                </div>
+              </div>
+
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
+                Weblines High School Portal
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
+                Full educational management system tracking academic sessions, class rosters, cumulative grade calculations, and term report sheets.
+              </p>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">Vue • Tailwind • Netlify</span>
+              <div class="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: ApexLogix AI Enterprise ERP -->
+          <div 
+            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
             data-project="apexlogix"
             role="button"
             tabindex="0"
-            aria-label="View ApexLogix AI Automation details"
+            aria-label="View ApexLogix AI Enterprise details"
           >
             <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-cyan-50 text-cyan-700 border border-cyan-200">
+              <!-- Real Project Picture Preview -->
+              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
+                <img 
+                  src="/images/apexlogix-erp.jpg" 
+                  alt="ApexLogix AI Enterprise Workflow Suite" 
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
                   AI &amp; Workflows
-                </span>
-                <span class="text-[11px] text-slate-400 font-mono">Enterprise ERP</span>
+                </div>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                  <span>Enterprise Active</span>
+                </div>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
+
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
                 ApexLogix AI Workflows
               </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
-                Custom enterprise pipeline eliminating 85% of manual invoice sorting via optical document recognition and automated accounting sync.
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
+                Intelligent optical extraction pipeline eliminating 85% of manual invoice sorting with automated approval queues and accounting sync.
               </p>
             </div>
             
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
               <span class="text-[11px] text-slate-500 font-mono">Python • FastAPI • AI</span>
-              <div class="w-8 h-8 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: MediPulse Telehealth & Clinic Portal -->
-          <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="medipulse"
-            role="button"
-            tabindex="0"
-            aria-label="View MediPulse Telehealth details"
-          >
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  HealthTech App
-                </span>
-                <span class="text-[11px] text-slate-400 font-mono">Multi-Clinic</span>
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-1.5 leading-snug">
-                MediPulse Clinical Suite
-              </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
-                NDPR-compliant patient records system, encrypted virtual consultations, and integrated laboratory test result dispatching.
-              </p>
-            </div>
-            
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">React Native • WebRTC</span>
-              <div class="w-8 h-8 rounded-full bg-emerald-50 group-hover:bg-emerald-600 text-emerald-700 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: GovTrack Statutory Licensing Portal -->
-          <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="govtrack"
-            role="button"
-            tabindex="0"
-            aria-label="View GovTrack Institutional Portal details"
-          >
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono uppercase bg-amber-50 text-amber-800 border border-amber-200">
-                  GovTech &amp; Cloud
-                </span>
-                <span class="text-[11px] text-slate-400 font-mono">Statutory Portal</span>
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors mb-1.5 leading-snug">
-                GovTrack Regulatory Portal
-              </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-4">
-                Centralized registry for business permits, automated identity verification, QR-coded electronic certificate generation, and audit logging.
-              </p>
-            </div>
-            
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">Next.js • Prisma • Redis</span>
-              <div class="w-8 h-8 rounded-full bg-amber-50 group-hover:bg-amber-600 text-amber-700 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-7 h-7 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
@@ -964,6 +1029,20 @@
             </p>
           </div>
 
+          <!-- Real Project Screenshot Photo -->
+          <div class="relative w-full h-48 sm:h-64 rounded-xl overflow-hidden bg-slate-100 border border-slate-200/90 shadow-inner group">
+            <img 
+              id="modal-image" 
+              src="" 
+              alt="Project Proof Screenshot" 
+              class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" 
+            />
+            <div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-slate-900/85 backdrop-blur-sm text-white text-[10px] font-mono flex items-center gap-1.5 shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Production Verified Proof</span>
+            </div>
+          </div>
+
           <!-- The Challenge / Context -->
           <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
             <span class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-1">The Architecture Challenge</span>
@@ -1023,7 +1102,187 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- 9. MOBILE NATIVE APP BOTTOM DOCK / TAB BAR -->
+    <!-- 9. FLOATING CONTACT BELL & CHAT TRIGGER    -->
+    <!-- (Placed at Right Bottom Corner Before Dock)-->
+    <!-- ========================================== -->
+    <div id="floating-contact-container" class="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-40 flex flex-col items-end">
+      
+      <!-- QUICK CONTACT POPUP TRAY -->
+      <div id="quick-contact-popup" class="hidden mb-3 w-[290px] sm:w-[320px] glass-card rounded-2xl p-3.5 sm:p-4 shadow-2xl border border-slate-200/90 backdrop-blur-xl transition-all duration-200 transform origin-bottom-right">
+        <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 mb-2.5">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="font-bold text-slate-900 text-xs tracking-tight">Direct Connect</span>
+            <span class="text-[10px] font-medium text-slate-500">• Fast Response</span>
+          </div>
+          <button id="close-contact-popup" class="text-slate-400 hover:text-slate-700 p-1 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Close Contact Card">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        
+        <p class="text-[12px] text-slate-600 mb-2.5 leading-snug">
+          Tell us what you have in mind! Connect with us through any channel below:
+        </p>
+
+        <!-- Channels List -->
+        <div class="space-y-1.5 sm:space-y-2">
+          <!-- 1. Interactive Chatbot Option -->
+          <button id="trigger-chatbot-btn" type="button" class="w-full flex items-center justify-between p-2 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border border-blue-200/80 text-left transition-all group">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-500 text-white flex items-center justify-center text-xs shadow-sm group-hover:scale-105 transition-transform">
+                💬
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block flex items-center gap-1">
+                  Project Chatbot
+                  <span class="text-[8px] font-mono font-bold uppercase px-1 py-0.2 rounded-full bg-blue-600 text-white">Interactive</span>
+                </span>
+                <span class="text-[10px] text-slate-500 block">Scope your idea instantly</span>
+              </div>
+            </div>
+            <span class="text-blue-600 group-hover:translate-x-0.5 transition-transform text-xs font-bold">&rarr;</span>
+          </button>
+
+          <!-- 2. WhatsApp -->
+          <a href="https://wa.me/2348030000000?text=Hello%20Rock%20Wave%20Digital%2C%20I%20have%20a%20project%20in%20mind%20and%20want%20to%20make%20it%20real." target="_blank" rel="noopener" class="w-full flex items-center justify-between p-2 rounded-xl bg-white hover:bg-emerald-50/70 border border-slate-200/80 hover:border-emerald-300 text-left transition-all group">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-[#25D366] text-white flex items-center justify-center text-xs shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">WhatsApp Chat</span>
+                <span class="text-[10px] text-emerald-600 font-medium block">Direct chat with lead architect</span>
+              </div>
+            </div>
+            <span class="text-slate-400 group-hover:text-emerald-600 text-xs font-bold">&rarr;</span>
+          </a>
+
+          <!-- 3. X (Twitter) -->
+          <a href="https://x.com" target="_blank" rel="noopener" class="w-full flex items-center justify-between p-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200/80 hover:border-slate-400 text-left transition-all group">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-black text-white flex items-center justify-center text-xs shadow-sm">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">Direct Message on X</span>
+                <span class="text-[10px] text-slate-500 block">@RockWaveDigital</span>
+              </div>
+            </div>
+            <span class="text-slate-400 group-hover:text-slate-800 text-xs font-bold">&rarr;</span>
+          </a>
+
+          <!-- 4. Email Direct -->
+          <a href="mailto:peteroche32@gmail.com?subject=Project%20Idea%20Inquiry%20-%20Rock%20Wave%20Digital&body=Hello%20Rock%20Wave%20Team%2C%0A%0AHere%20is%20what%20I%20have%20in%20mind%3A" class="w-full flex items-center justify-between p-2 rounded-xl bg-white hover:bg-blue-50/70 border border-slate-200/80 hover:border-blue-300 text-left transition-all group">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-slate-900 block">Official Email</span>
+                <span class="text-[10px] text-slate-500 block truncate max-w-[150px]">peteroche32@gmail.com</span>
+              </div>
+            </div>
+            <span class="text-slate-400 group-hover:text-blue-600 text-xs font-bold">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- FLOATING BELL BUTTON -->
+      <button 
+        id="floating-bell-btn" 
+        type="button" 
+        class="bell-hover bell-pulse group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#0891B2] via-[#2563EB] to-[#10B981] text-white shadow-xl shadow-cyan-600/30 hover:shadow-cyan-600/40 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cyan-300/50" 
+        aria-label="Open Quick Contact and Chatbot Options"
+      >
+        <!-- Unread Badge -->
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 text-[9px] font-bold text-white items-center justify-center">1</span>
+        </span>
+
+        <!-- Bell Icon -->
+        <svg class="bell-icon w-6 h-6 text-white filter drop-shadow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 10. INTERACTIVE PROJECT CHATBOT WINDOW     -->
+    <!-- ========================================== -->
+    <div id="project-chatbot-window" class="hidden fixed bottom-20 md:bottom-8 right-3 sm:right-6 md:right-8 z-50 w-[92vw] sm:w-[380px] h-[520px] max-h-[82vh] bg-white rounded-2xl shadow-2xl border border-slate-200/90 flex flex-col overflow-hidden modal-animate-enter">
+      <!-- Chatbot Header -->
+      <div class="px-4 py-3 bg-gradient-to-r from-[#0F172A] to-[#1E293B] text-white flex items-center justify-between shrink-0 shadow-sm">
+        <div class="flex items-center gap-2.5">
+          <div class="relative w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-500 to-cyan-400 flex items-center justify-center text-white text-sm shadow-sm">
+            🤖
+            <span class="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 border-2 border-slate-900"></span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold leading-tight flex items-center gap-1.5">
+              Rock Wave Project Architect
+              <span class="text-[9px] font-mono font-normal text-cyan-300">Online</span>
+            </h4>
+            <p class="text-[10px] text-slate-300">Tell us what you have in mind</p>
+          </div>
+        </div>
+        <button id="close-chatbot-btn" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700/60 transition-colors" aria-label="Close Chatbot">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Messages Scroll Area -->
+      <div id="chatbot-messages" class="flex-1 p-3.5 overflow-y-auto space-y-3 bg-[#F8FAFC] text-xs">
+        <!-- Greeting from Bot -->
+        <div class="flex items-start gap-2 max-w-[92%]">
+          <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+            RW
+          </div>
+          <div class="p-3 rounded-2xl rounded-tl-none bg-white border border-slate-200/80 shadow-xs text-slate-700 space-y-1.5 leading-relaxed">
+            <p class="font-semibold text-slate-900">👋 Hello! Tell us what you have in mind.</p>
+            <p>You don't need tech jargon. Tell us what you want to achieve — we make it real, and keep you smiling and stress-free!</p>
+            <p class="text-[11px] text-slate-500 font-medium">Click an idea below or type your own:</p>
+          </div>
+        </div>
+
+        <!-- Quick Idea Pills -->
+        <div id="chatbot-quick-prompts" class="flex flex-wrap gap-1.5 pl-8">
+          <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 text-slate-700 font-medium shadow-2xs transition-all">
+            💡 Fintech app like RockPay
+          </button>
+          <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 font-medium shadow-2xs transition-all">
+            🏫 School portal like Weblines
+          </button>
+          <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-slate-700 font-medium shadow-2xs transition-all">
+            ⚡ Automate invoices &amp; ERP
+          </button>
+          <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-amber-50 border border-slate-200 hover:border-amber-300 text-slate-700 font-medium shadow-2xs transition-all">
+            🏢 Setup office networking &amp; PCs
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form id="chatbot-form" class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0">
+        <input 
+          id="chatbot-input" 
+          type="text" 
+          placeholder="e.g., I want an app where users can..." 
+          class="flex-1 text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-50"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="w-8 h-8 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white flex items-center justify-center shrink-0 shadow-sm transition-all" aria-label="Send Idea">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 11. MOBILE NATIVE APP BOTTOM DOCK / TAB BAR -->
     <!-- (iOS / Android Native App Feel on Mobile)  -->
     <!-- ========================================== -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-dock px-3 py-1.5 flex items-center justify-around shadow-2xl">
@@ -1070,32 +1329,74 @@
     <!-- ========================================== -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // Project Database for Modal Details
+        // Project Database for Modal Details (With Real Screenshots Proof)
         const projectData = {
-          rockpay: {
-            title: 'RockPay Nigeria Core',
-            subtitle: 'National Bill Payment & Automated Microtransactions Infrastructure',
+          rockpay_bills: {
+            title: 'RockPay Utility & Bills Portal',
+            subtitle: 'National Bill Payment, Token Dispensation & Multi-Service Receipt Engine',
             category: 'Fintech Engine',
             status: 'Live Production',
+            image: '/images/rockpay-bills.jpg',
             servicePreselect: 'Custom Software/Apps',
             challenge: 'High concurrency during evening peak payment hours resulted in delayed token generation and reconciliation mismatches across legacy utility aggregators.',
             highlights: [
-              'Designed a fault-tolerant message queue architecture handling 50,000+ daily electricity token and VTU airtime dispatches.',
+              'Designed a fault-tolerant message queue architecture handling 50,000+ daily electricity tokens and VTU airtime dispatches.',
               'Implemented cryptographic double-entry ledger bookkeeping to guarantee zero transaction loss during network partitions.',
-              'Integrated automated multi-provider failover routing ensuring 99.98% transaction success rates.'
+              'Engineered multi-provider failover routing and PDF/WhatsApp multi-receipt downloads ensuring 99.98% delivery success.'
             ],
-            techStack: ['Node.js', 'PostgreSQL', 'Redis Queue', 'Docker', 'React', 'Tailwind CSS', 'Paystack API'],
+            techStack: ['React', 'Node.js', 'PostgreSQL', 'Redis Queue', 'Paystack API', 'VTPass', 'Tailwind CSS'],
             metrics: [
               { val: '99.98%', label: 'Uptime' },
-              { val: '< 180ms', label: 'Token Latency' },
+              { val: '< 150ms', label: 'Token Speed' },
               { val: 'Zero', label: 'Ledger Drift' }
             ]
           },
+          rockpay_wallet: {
+            title: 'RockPay Mobile Digital Wallet',
+            subtitle: 'Consumer iOS/Android Wallet with Instant Paystack Funding & Biometrics',
+            category: 'Mobile App',
+            status: 'Active Mobile App',
+            image: '/images/rockpay-wallet.jpg',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'Consumers demanded a clean, native-feeling mobile app to fund their wallets instantly and settle frequent recurring bills without re-entering card numbers.',
+            highlights: [
+              'Built native mobile interfaces with biometric authorization and eye-icon privacy balance masking.',
+              'Integrated automated Paystack dedicated virtual bank accounts for zero-delay instant wallet funding.',
+              'Designed 1-tap QuickPay presets reducing regular bill checkout time by over 75%.'
+            ],
+            techStack: ['React Native', 'TypeScript', 'Node.js', 'Paystack Virtual Accounts', 'PostgreSQL', 'Redis'],
+            metrics: [
+              { val: '3 Taps', label: 'Checkout' },
+              { val: 'Instant', label: 'Top-Up' },
+              { val: '4.8 ★', label: 'User Rating' }
+            ]
+          },
+          weblines_school: {
+            title: 'Weblines High School Portal',
+            subtitle: 'Comprehensive School Grading, Student Records & Term Result Sheets',
+            category: 'EdTech Portal',
+            status: 'Live on weblines.netlify.app',
+            image: '/images/weblines-school.jpg',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'Manual grade calculations on physical sheets created grading discrepancies, delayed end-of-term reports, and made it difficult for parents to track child progress.',
+            highlights: [
+              'Architected a cloud-hosted school management platform managing sessions, terms, classes, and teacher rosters.',
+              'Automated third-term cumulative score calculations, grading rankings, and instant PDF report cards.',
+              'Integrated parent portal allowing secure remote viewing of continuous assessment scores and attendance.'
+            ],
+            techStack: ['Vue.js / React', 'Tailwind CSS', 'Cloud Firestore', 'Netlify Edge', 'Node.js'],
+            metrics: [
+              { val: '100% Digital', label: 'Report Cards' },
+              { val: 'Zero', label: 'Calc Errors' },
+              { val: '3x Faster', label: 'Term Processing' }
+            ]
+          },
           apexlogix: {
-            title: 'ApexLogix AI Workflows',
+            title: 'ApexLogix AI Enterprise Workflows',
             subtitle: 'Automated Invoice Processing & Multi-Tier Enterprise Approval Pipeline',
             category: 'AI & Automation',
             status: 'Enterprise Deployed',
+            image: '/images/apexlogix-erp.jpg',
             servicePreselect: 'AI & Workflow Automation',
             challenge: 'Enterprise finance officers were losing 20+ hours each week manually keying PDF vendor invoices, verifying tax IDs, and chasing department approval signatures.',
             highlights: [
@@ -1107,45 +1408,7 @@
             metrics: [
               { val: '85%', label: 'Time Saved' },
               { val: '99.4%', label: 'AI Accuracy' },
-              { val: '2.5 mins', label: 'Cycle Time' }
-            ]
-          },
-          medipulse: {
-            title: 'MediPulse Clinical Suite',
-            subtitle: 'Telehealth Consultations & Electronic Health Records Management',
-            category: 'HealthTech App',
-            status: 'Multi-Clinic Active',
-            servicePreselect: 'Custom Software/Apps',
-            challenge: 'Private multi-branch clinics required a unified patient consultation and lab results portal compliant with NDPR and healthcare confidentiality frameworks.',
-            highlights: [
-              'Built end-to-end encrypted WebRTC video consultation rooms with responsive in-call prescription writer.',
-              'Architected fine-grained role-based access control (RBAC) separating doctor medical charts from front-desk billing records.',
-              'Created instant SMS and WhatsApp automated appointment reminder bots that reduced patient no-show rates by 42%.'
-            ],
-            techStack: ['React Native', 'TypeScript', 'WebRTC', 'Node.js', 'PostgreSQL', 'AWS S3', 'Redis'],
-            metrics: [
-              { val: '42%', label: 'No-Show Cut' },
-              { val: '100%', label: 'NDPR Safe' },
-              { val: '14 Clinics', label: 'Connected' }
-            ]
-          },
-          govtrack: {
-            title: 'GovTrack Regulatory Portal',
-            subtitle: 'Institutional Business Licensing & Electronic Certificate Registry',
-            category: 'GovTech & Cloud',
-            status: 'Statutory Deployed',
-            servicePreselect: 'IT Consultation',
-            challenge: 'Public agencies faced long queue lines, lost paper documentation, and manual stamp validation issues when issuing trade licenses and annual permits.',
-            highlights: [
-              'Architected a cloud-native citizen self-service intake portal processing statutory licensing fees and document verification.',
-              'Implemented cryptographic QR verification certificates readable by enforcement officers on mobile devices in offline mode.',
-              'Engineered high-security administrative consoles with tamper-evident audit trails and multi-factor biometric authentication.'
-            ],
-            techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma ORM', 'Redis', 'Tailwind CSS', 'Docker'],
-            metrics: [
-              { val: '10x Faster', label: 'Turnaround' },
-              { val: '100% Digital', label: 'Paperless' },
-              { val: 'Zero Fraud', label: 'Tamper-Proof' }
+              { val: '< 2 mins', label: 'Approval Speed' }
             ]
           }
         };
@@ -1166,6 +1429,13 @@
           document.getElementById('modal-subtitle').textContent = data.subtitle;
           document.getElementById('modal-category').textContent = data.category;
           document.getElementById('modal-challenge').textContent = data.challenge;
+
+          // Set Real Proof Image
+          const modalImg = document.getElementById('modal-image');
+          if (modalImg && data.image) {
+            modalImg.src = data.image;
+            modalImg.alt = data.title;
+          }
 
           // Highlights
           const highlightsList = document.getElementById('modal-highlights');
@@ -1363,6 +1633,163 @@
             form.classList.remove('hidden');
           });
         }
+
+        // ==========================================
+        // FLOATING BELL & QUICK CONTACT POPUP LOGIC
+        // ==========================================
+        const floatingBellBtn = document.getElementById('floating-bell-btn');
+        const quickContactPopup = document.getElementById('quick-contact-popup');
+        const closeContactPopupBtn = document.getElementById('close-contact-popup');
+        const triggerChatbotBtn = document.getElementById('trigger-chatbot-btn');
+        const chatbotWindow = document.getElementById('project-chatbot-window');
+        const closeChatbotBtn = document.getElementById('close-chatbot-btn');
+        const chatbotForm = document.getElementById('chatbot-form');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatPromptPills = document.querySelectorAll('.chat-prompt-pill');
+
+        function toggleQuickContact() {
+          const isHidden = quickContactPopup.classList.contains('hidden');
+          if (isHidden) {
+            quickContactPopup.classList.remove('hidden');
+            if (!chatbotWindow.classList.contains('hidden')) {
+              chatbotWindow.classList.add('hidden');
+            }
+          } else {
+            quickContactPopup.classList.add('hidden');
+          }
+        }
+
+        if (floatingBellBtn) {
+          floatingBellBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleQuickContact();
+          });
+        }
+
+        if (closeContactPopupBtn) {
+          closeContactPopupBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            quickContactPopup.classList.add('hidden');
+          });
+        }
+
+        // Trigger Chatbot from Contact Card
+        if (triggerChatbotBtn) {
+          triggerChatbotBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            quickContactPopup.classList.add('hidden');
+            chatbotWindow.classList.remove('hidden');
+            setTimeout(() => {
+              chatbotInput.focus();
+            }, 100);
+          });
+        }
+
+        if (closeChatbotBtn) {
+          closeChatbotBtn.addEventListener('click', () => {
+            chatbotWindow.classList.add('hidden');
+          });
+        }
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+          if (quickContactPopup && !quickContactPopup.classList.contains('hidden')) {
+            if (!quickContactPopup.contains(e.target) && !floatingBellBtn.contains(e.target)) {
+              quickContactPopup.classList.add('hidden');
+            }
+          }
+        });
+
+        // Chatbot Messaging Engine
+        function appendUserMessage(text) {
+          const userMsgDiv = document.createElement('div');
+          userMsgDiv.className = 'flex items-start justify-end gap-2 max-w-[92%] ml-auto';
+          userMsgDiv.innerHTML = `
+            <div class="p-3 rounded-2xl rounded-tr-none bg-blue-600 text-white shadow-xs leading-relaxed text-left">
+              <p>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+            </div>
+            <div class="w-6 h-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+              You
+            </div>
+          `;
+          chatbotMessages.appendChild(userMsgDiv);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function appendBotResponse(ideaText) {
+          // Show typing indicator
+          const typingIndicator = document.createElement('div');
+          typingIndicator.id = 'typing-indicator';
+          typingIndicator.className = 'flex items-center gap-2 text-slate-400 pl-8 text-[11px]';
+          typingIndicator.innerHTML = `
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-bounce"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-bounce [animation-delay:0.2s]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-bounce [animation-delay:0.4s]"></span>
+            <span>Architecting solution...</span>
+          `;
+          chatbotMessages.appendChild(typingIndicator);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+          setTimeout(() => {
+            if (document.getElementById('typing-indicator')) {
+              typingIndicator.remove();
+            }
+
+            const botMsgDiv = document.createElement('div');
+            botMsgDiv.className = 'flex items-start gap-2 max-w-[92%]';
+            
+            const encodedIdea = encodeURIComponent(`Hello Rock Wave Digital! I scoped an idea with your AI assistant: "${ideaText}". I want to make it real.`);
+            
+            botMsgDiv.innerHTML = `
+              <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">
+                RW
+              </div>
+              <div class="p-3.5 rounded-2xl rounded-tl-none bg-white border border-slate-200/90 shadow-xs text-slate-700 space-y-2 leading-relaxed text-left">
+                <p class="font-bold text-slate-900 flex items-center gap-1.5">
+                  <span class="text-emerald-600">✓</span> We can make this real!
+                </p>
+                <p>Here is our recommended rollout plan for <strong>${ideaText.slice(0, 45)}...</strong>:</p>
+                <ul class="space-y-1 text-[11px] text-slate-600 pl-3 list-disc">
+                  <li><strong>Stage 1 (Discovery &amp; Wireframing):</strong> Scope features, user roles, and data flows.</li>
+                  <li><strong>Stage 2 (Interactive Prototype):</strong> Clickable preview in days for your review.</li>
+                  <li><strong>Stage 3 (Production Launch):</strong> Fast backend, rock-solid security, and 99.9% uptime.</li>
+                </ul>
+                <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2">
+                  <a href="https://wa.me/2348030000000?text=${encodedIdea}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#1EBE5D] text-white text-[11px] font-bold shadow-xs transition-colors">
+                    <span>Send to WhatsApp</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </a>
+                  <a href="#contact" onclick="document.getElementById('project-chatbot-window').classList.add('hidden')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold transition-colors">
+                    Official Proposal Form
+                  </a>
+                </div>
+              </div>
+            `;
+            chatbotMessages.appendChild(botMsgDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+          }, 800);
+        }
+
+        if (chatbotForm) {
+          chatbotForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = chatbotInput.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            chatbotInput.value = '';
+            appendBotResponse(text);
+          });
+        }
+
+        chatPromptPills.forEach(pill => {
+          pill.addEventListener('click', () => {
+            const promptText = pill.textContent.trim().replace(/^[^\w\s]+/, '').trim();
+            appendUserMessage(promptText);
+            appendBotResponse(promptText);
+          });
+        });
       });
     </script>
   </body>
