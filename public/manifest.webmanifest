@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Rock Wave Digital Enterprise",
+  "short_name": "Rock Wave",
+  "description": "Rock Wave Digital Enterprise mobile app for exploring services, projects, and starting a project inquiry.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#F8FAFC",
+  "icons": [
+    {
+      "src": "/icons/rock-wave.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

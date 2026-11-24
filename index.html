@@ -3,65 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-    <title>Rock Wave Digital Enterprise | Engineering Smarter Business Ecosystems</title>
-    <meta name="description" content="Rock Wave Digital Enterprise is a fully registered, forward-thinking ICT agency specializing in building secure web architectures, high-performance mobile apps, custom automation pipelines, and supplying corporate enterprise hardware." />
-    <meta property="og:title" content="Rock Wave Digital Enterprise | Engineering Smarter Business Ecosystems" />
-    <meta property="og:description" content="Secure web architectures, mobile apps, custom automation pipelines, and corporate enterprise hardware procurement." />
+    <title>Rock Wave Digital Enterprise | Websites, Software &amp; ICT</title>
+    <meta name="description" content="Rock Wave Digital Enterprise is an ICT and software business serving Abuja FCT and Nasarawa. We build websites, applications and learning platforms, provide workflow automation and technology advice, and source ICT equipment." />
+    <meta property="og:title" content="Rock Wave Digital Enterprise | Websites, Software &amp; ICT" />
+    <meta property="og:description" content="Websites, applications, learning platforms, workflow automation, ICT advice and equipment sourcing in Abuja FCT and Nasarawa." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="theme-color" content="#F8FAFC" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Rock Wave Digital" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/icons/rock-wave.svg" />
+    <link rel="apple-touch-icon" href="/icons/rock-wave.svg" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              slate: {
-                50: '#F8FAFC',
-                100: '#F1F5F9',
-                150: '#EBEFF5',
-                200: '#E2E8F0',
-                300: '#CBD5E1',
-                400: '#94A3B8',
-                500: '#64748B',
-                600: '#475569',
-                700: '#334155',
-                800: '#1E293B',
-                900: '#0F172A',
-                950: '#0A0F1D',
-              },
-              cyan: {
-                cyber: '#0891B2',
-                glow: '#06B6D4',
-              },
-              blue: {
-                electric: '#2563EB',
-                deep: '#1D4ED8',
-              },
-              emerald: {
-                cta: '#10B981',
-                ctaHover: '#059669',
-              }
-            },
-            fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-              mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-            }
-          }
-        }
-      };
+    <script type="module">
+      import '/styles.css';
     </script>
 
     <style>
-      /* Smooth & Glassy White App Styling */
+      /* Shared site styling */
       html {
         scroll-behavior: smooth;
         background-color: #F8FAFC;
@@ -91,13 +57,11 @@
         background: #0891B2;
       }
 
-      /* Glass Panel Classes */
+      /* Clean cards with a restrained shadow */
       .glass-card {
-        background: rgba(255, 255, 255, 0.82);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(226, 232, 240, 0.85);
-        box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 2px 8px -3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.04);
       }
 
       .glass-card-hover {
@@ -180,6 +144,172 @@
         70% { box-shadow: 0 0 0 14px rgba(6, 182, 212, 0); }
         100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
       }
+
+      :root {
+        color-scheme: light;
+        scroll-padding-top: 5.5rem;
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
+      section[id] {
+        scroll-margin-top: 5.5rem;
+      }
+
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        touch-action: manipulation;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      select:focus-visible,
+      textarea:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.55);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 767px) {
+        html {
+          scroll-padding-top: calc(5rem + env(safe-area-inset-top));
+        }
+
+        body {
+          padding-top: env(safe-area-inset-top);
+          padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+          overflow-x: hidden;
+        }
+
+        #top-nav {
+          top: env(safe-area-inset-top);
+        }
+
+        section[id] {
+          scroll-margin-top: calc(5rem + env(safe-area-inset-top));
+        }
+
+        #home h1 {
+          font-size: clamp(1.75rem, 7vw, 2.5rem);
+          line-height: 1.15;
+          text-wrap: balance;
+        }
+
+        #home .inline-flex.items-center.gap-2 {
+          flex-wrap: wrap;
+          justify-content: center;
+          text-align: center;
+          row-gap: 0.35rem;
+          max-width: 100%;
+        }
+
+        #home .flex.flex-row.items-center.justify-center {
+          flex-wrap: wrap;
+        }
+
+        #home .flex.flex-row.items-center.justify-center > a {
+          min-width: min(100%, 10rem);
+        }
+
+        .glass-dock {
+          padding-bottom: calc(0.375rem + env(safe-area-inset-bottom));
+          min-height: calc(3.75rem + env(safe-area-inset-bottom));
+        }
+
+        .mobile-dock-tab {
+          flex: 1 1 0;
+          min-width: 0;
+          border-radius: 0.875rem;
+        }
+
+        .mobile-dock-tab[aria-current="page"] {
+          color: #2563EB;
+          background: rgba(239, 246, 255, 0.85);
+        }
+
+        #floating-contact-container {
+          right: max(1rem, env(safe-area-inset-right));
+          bottom: calc(4.75rem + env(safe-area-inset-bottom));
+        }
+
+        #quick-contact-popup {
+          width: min(20rem, calc(100vw - 2rem));
+          max-width: calc(100vw - 2rem);
+        }
+
+        #project-chatbot-window {
+          right: max(0.75rem, env(safe-area-inset-right));
+          bottom: calc(4.75rem + env(safe-area-inset-bottom));
+          width: min(24rem, calc(100vw - 1.5rem));
+          height: min(32.5rem, calc(100dvh - 8.5rem - env(safe-area-inset-bottom)));
+          max-height: calc(100dvh - 8.5rem - env(safe-area-inset-bottom));
+        }
+
+        #project-chatbot-window input {
+          min-height: 2.75rem;
+          font-size: 16px;
+        }
+
+        #project-modal {
+          align-items: flex-end;
+          padding: 0.5rem;
+          padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+        }
+
+        #project-modal > div.relative {
+          width: 100%;
+          max-height: calc(100dvh - 1rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+          border-radius: 1.25rem;
+        }
+
+        #project-modal > div.relative > div.overflow-y-auto {
+          min-height: 0;
+          overscroll-behavior: contain;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        #project-intake-form input,
+        #project-intake-form select,
+        #project-intake-form textarea {
+          font-size: 16px;
+        }
+
+        #project-intake-form textarea {
+          min-height: 7rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #home .flex.flex-row.items-center.justify-center {
+          flex-direction: column;
+        }
+
+        #home .flex.flex-row.items-center.justify-center > a {
+          width: 100%;
+          flex: auto;
+        }
+
+        .mobile-dock-tab span {
+          font-size: 9px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
 
@@ -230,6 +360,9 @@
             <a href="#about" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               About Us
             </a>
+            <a href="#process" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
+              Our Process
+            </a>
             <a href="#contact" class="min-h-[48px] px-3.5 py-2.5 flex items-center text-xs sm:text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-slate-100/80 rounded-xl transition-all">
               Contact Us
             </a>
@@ -269,10 +402,16 @@
         <a href="#about" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           About Us
         </a>
+        <a href="#process" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
+          Our Process
+        </a>
         <a href="#contact" class="mobile-nav-link flex items-center min-h-[48px] px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 hover:text-blue-600 hover:bg-slate-100 active:bg-slate-100 transition-colors">
           Contact Us
         </a>
         <div class="pt-2">
+          <button id="pwa-install-btn" type="button" class="hidden flex w-full items-center justify-center min-h-[48px] px-5 py-3 rounded-xl border border-blue-200 bg-blue-50 text-blue-700 text-sm font-bold">
+            Install Rock Wave App
+          </button>
           <a href="#contact" class="mobile-nav-link btn-native flex items-center justify-center min-h-[48px] w-full px-5 py-3 rounded-xl bg-[#10B981] active:bg-[#059669] text-white text-sm font-bold shadow-md shadow-emerald-600/20">
             Get a Quote
           </a>
@@ -297,30 +436,30 @@
             <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
             <span class="text-blue-700 font-bold">Registered ICT Enterprise</span>
             <span class="text-slate-300">•</span>
-            <span class="text-slate-600">You Imagine It — We Engineer It</span>
+            <span class="text-slate-600">Websites, Software &amp; ICT</span>
           </div>
 
           <!-- Main Heading -->
           <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.2]">
-            Tell Us What You Have in Mind — <span class="bg-gradient-to-r from-[#0891B2] via-[#2563EB] to-[#10B981] bg-clip-text text-transparent">We Make It Real &amp; Keep You Happy.</span>
+            Websites, software and ICT support for <span class="text-blue-700">growing organizations.</span>
           </h1>
 
           <!-- Subheading -->
           <p class="max-w-2xl text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed">
-            Got an idea for a fintech payment app, a school portal, an automated workflow, or enterprise IT setup? You share your vision in plain words — Rock Wave handles the code, architecture, and deployment so you smile with confidence.
+            From school portals and learning platforms to custom websites, automation and equipment sourcing, we help organizations get the technology they need.
           </p>
 
           <!-- Action Buttons: Centered, Compact, Same-Line on Tablet & Desktop -->
           <div class="flex flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto">
             <a href="#contact" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all">
-              <span>Tell Us Your Idea</span>
+              <span>Start a Conversation</span>
               <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
 
             <a href="#projects" class="btn-native min-h-[48px] flex-1 sm:flex-initial px-5 sm:px-7 py-3 rounded-xl border border-slate-300 hover:border-blue-500 bg-white/80 hover:bg-white text-slate-700 hover:text-blue-600 font-semibold text-xs sm:text-sm flex items-center justify-center shadow-sm transition-all">
-              See Projects We Built Real
+              View Our Work
             </a>
           </div>
 
@@ -336,8 +475,8 @@
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-cyan-700 font-bold block truncate">Infrastructure</span>
-                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">99.9% Uptime</span>
+                  <span class="text-[10px] font-mono uppercase text-cyan-700 font-bold block truncate">Support</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">ICT Services</span>
                 </div>
               </div>
 
@@ -349,8 +488,8 @@
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-blue-700 font-bold block truncate">Architecture</span>
-                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Zero-Trust Sec</span>
+                  <span class="text-[10px] font-mono uppercase text-blue-700 font-bold block truncate">Development</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Web &amp; Mobile Apps</span>
                 </div>
               </div>
 
@@ -362,8 +501,8 @@
                   </svg>
                 </div>
                 <div class="min-w-0">
-                  <span class="text-[10px] font-mono uppercase text-emerald-700 font-bold block truncate">Efficiency</span>
-                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Auto Pipelines</span>
+                  <span class="text-[10px] font-mono uppercase text-emerald-700 font-bold block truncate">Automation</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Workflows &amp; AI</span>
                 </div>
               </div>
 
@@ -376,7 +515,7 @@
                 </div>
                 <div class="min-w-0">
                   <span class="text-[10px] font-mono uppercase text-amber-700 font-bold block truncate">Procurement</span>
-                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">Enterprise B2B</span>
+                  <span class="text-xs sm:text-sm font-bold text-slate-900 block truncate">ICT Equipment</span>
                 </div>
               </div>
 
@@ -396,103 +535,114 @@
         <!-- Compact Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
           <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-cyan-50 text-cyan-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-cyan-200">
-            Core Competencies
+            What We Do
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Specialized Technology Solutions
+            Web, Software &amp; ICT Services
           </h2>
           <p class="text-slate-600 text-xs sm:text-sm">
-            High-performance digital engineering and institutional ICT procurement built for modern enterprises.
+            Tell us what you need. We’ll agree on a practical scope before work begins.
           </p>
         </div>
 
         <!-- REDUCED & COMPACT CARDS GRID: 4 columns on large screens, 2 on medium, clean native cards on mobile -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           
-          <!-- Card 1: Advanced Automation & AI Engines -->
+          <!-- Card 1: Workflow Automation -->
           <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-100/40 rounded-bl-full pointer-events-none group-hover:bg-cyan-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-xl mb-3.5 text-cyan-600">
-                ⚙️
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-3.5 text-cyan-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06-1.6 2.77-.08-.03a1.65 1.65 0 00-1.76.4l-.05.06h-3.2l-.03-.08a1.65 1.65 0 00-1.33-1.15 1.65 1.65 0 00-1.61.67l-.05.07-2.77-1.6.03-.09a1.65 1.65 0 00-.4-1.75l-.06-.05v-3.2l.08-.03a1.65 1.65 0 001.15-1.33 1.65 1.65 0 00-.67-1.61l-.07-.05 1.6-2.77.09.03a1.65 1.65 0 001.75-.4l.05-.06h3.2l.03.08a1.65 1.65 0 001.33 1.15 1.65 1.65 0 001.61-.67l.05-.07 2.77 1.6-.03.09a1.65 1.65 0 00.4 1.75l.06.05v3.2l-.08.03a1.65 1.65 0 00-.82 1.12z"></path>
+                </svg>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
-                Advanced Automation &amp; AI Engines
+                Workflow Automation &amp; AI
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
-                We eliminate repetitive business tasks by developing custom background workflows, robust webhooks, and intelligent AI models tailored to your operations.
+                We build automation and AI-assisted tools around specific tasks your team wants to improve.
               </p>
             </div>
             <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
               <span class="text-cyan-700 font-semibold">AI &amp; Workflows</span>
               <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
-                Inquire &rarr;
+                Talk to us &rarr;
               </a>
             </div>
           </div>
 
-          <!-- Card 2: Web & Mobile App Development -->
+          <!-- Card 2: Websites & Applications -->
           <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-blue-100/40 rounded-bl-full pointer-events-none group-hover:bg-blue-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-xl mb-3.5 text-blue-600">
-                💻
+              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-3.5 text-blue-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="13" rx="2" stroke-width="1.8"></rect>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 21h8m-4-4v4"></path>
+                </svg>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
-                Web &amp; Mobile App Development
+                Websites &amp; Applications
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
-                We engineer secure, responsive, mobile-first applications and high-traffic fintech, utility, and retail web portals optimized for flawless scaling.
+                Responsive websites and mobile-first applications shaped around your organization’s needs.
               </p>
             </div>
             <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span class="text-blue-700 font-semibold">Fintech &amp; Apps</span>
+              <span class="text-blue-700 font-semibold">Custom Apps</span>
               <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
-                Inquire &rarr;
+                Talk to us &rarr;
               </a>
             </div>
           </div>
 
-          <!-- Card 3: ICT Consultation & Tech Strategy -->
+          <!-- Card 3: ICT Advice -->
           <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-100/40 rounded-bl-full pointer-events-none group-hover:bg-cyan-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-xl mb-3.5 text-cyan-600">
-                🏢
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center mb-3.5 text-cyan-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 21h18M5 21V7l7-4 7 4v14M9 10h.01M15 10h.01M9 14h.01M15 14h.01M10 21v-3h4v3"></path>
+                </svg>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
-                ICT Consultation &amp; Tech Strategy
+                ICT Advice &amp; Consultation
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
-                We audit infrastructure, optimize active tech stacks, and blueprint technology scaling maps for corporate enterprises.
+                We help assess your setup, compare options, and choose practical technology for your work.
               </p>
             </div>
             <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
-              <span class="text-cyan-700 font-semibold">Audits &amp; Maps</span>
+              <span class="text-cyan-700 font-semibold">Technology Advice</span>
               <a href="#contact" class="text-blue-600 hover:text-blue-800 flex items-center gap-1 font-sans font-bold py-1">
-                Inquire &rarr;
+                Talk to us &rarr;
               </a>
             </div>
           </div>
 
-          <!-- Card 4: Infrastructural Supply & Gadget Procurement -->
+          <!-- Card 4: ICT Equipment Supply -->
           <div class="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-100/40 rounded-bl-full pointer-events-none group-hover:bg-emerald-200/50 transition-colors"></div>
             <div>
-              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-xl mb-3.5 text-emerald-600">
-                🔌
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-3.5 text-emerald-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.8"></rect>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 9h6v6H9zM9 1v3m6-3v3M9 20v3m6-3v3M1 9h3m-3 6h3m16-6h3m-3 6h3"></path>
+                </svg>
               </div>
               <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors leading-snug">
-                Infrastructural Supply &amp; Procurement
+                ICT Equipment Supply
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed">
-                B2B corporate procurement of high-end engineering workstations, server racks, secure networking hardware, and institutional equipment.
+                Computers, networking equipment, and other ICT hardware sourced to fit your requirements.
               </p>
             </div>
             <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
               <span class="text-emerald-700 font-semibold">B2B Hardware</span>
               <a href="#contact" class="text-emerald-600 hover:text-emerald-800 flex items-center gap-1 font-sans font-bold py-1">
-                Inquire &rarr;
+                Talk to us &rarr;
               </a>
             </div>
           </div>
@@ -512,106 +662,18 @@
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
           <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
-            Real Systems • Verified Track Record
+            Selected Projects
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Proof of Work: Systems We Built &amp; Shipped
+            Projects We’ve Worked On
           </h2>
           <p class="text-slate-600 text-xs sm:text-sm">
-            People trust real results. Tap any live project below to view full screenshots, architecture challenges, and delivery outcomes.
+            Explore a selection of education and community projects, with links to their live sites.
           </p>
         </div>
 
-        <!-- Projects Grid With Real Pictures -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-
-          <!-- Project 1: RockPay Bills Infrastructure & Receipts -->
-          <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="rockpay_bills"
-            role="button"
-            tabindex="0"
-            aria-label="View RockPay Nigeria Bills & Receipts details"
-          >
-            <div>
-              <!-- Real Project Picture Preview -->
-              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
-                <img 
-                  src="/images/rockpay-bills.jpg" 
-                  alt="RockPay Bills Payment &amp; Receipt Architecture" 
-                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
-                  Fintech Engine
-                </div>
-                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
-                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                  <span>Live Production</span>
-                </div>
-              </div>
-
-              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
-                RockPay Bills &amp; Receipts
-              </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
-                High-volume utility bill payments, instant electricity token dispensation, VTU data bundles, and multi-service receipt generation.
-              </p>
-            </div>
-            
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">React • Node • Paystack</span>
-              <div class="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-600 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: RockPay Mobile Wallet Dashboard -->
-          <div 
-            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="rockpay_wallet"
-            role="button"
-            tabindex="0"
-            aria-label="View RockPay Mobile Wallet details"
-          >
-            <div>
-              <!-- Real Project Picture Preview -->
-              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
-                <img 
-                  src="/images/rockpay-wallet.jpg" 
-                  alt="RockPay Mobile Digital Wallet Application" 
-                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
-                  Mobile Wallet
-                </div>
-                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
-                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                  <span>Active App</span>
-                </div>
-              </div>
-
-              <h3 class="text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
-                RockPay Mobile Wallet
-              </h3>
-              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
-                iOS/Android digital wallet with dynamic balance privacy masking, instant Paystack funding, and one-tap QuickPay recurring presets.
-              </p>
-            </div>
-            
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">React Native • Redis</span>
-              <div class="w-7 h-7 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
+        <!-- Projects Grid With Project Screenshots -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
 
           <!-- Project 3: Weblines International High School -->
           <div 
@@ -624,9 +686,9 @@
             <div>
               <!-- Real Project Picture Preview -->
               <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
-                <img 
-                  src="/images/weblines-school.jpg" 
-                  alt="Weblines International High School Educational Portal" 
+                <img
+                  src="/images/weblines-school.jpg"
+                  alt="Weblines International High School Educational Portal"
                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
@@ -635,20 +697,20 @@
                 </div>
                 <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
                   <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                  <span>weblines.netlify.app</span>
+                  <span>weblinesskul.netlify.app</span>
                 </div>
               </div>
 
               <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
-                Weblines High School Portal
+                WeblinesHub School Results
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
-                Full educational management system tracking academic sessions, class rosters, cumulative grade calculations, and term report sheets.
+                School result management for computing grades, preparing report cards, and giving families online access to results.
               </p>
             </div>
             
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">Vue • Tailwind • Netlify</span>
+              <span class="text-[11px] text-slate-500 font-mono">Results • Report Cards • Online Access</span>
               <div class="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-700 group-hover:text-white flex items-center justify-center transition-colors">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -657,42 +719,82 @@
             </div>
           </div>
 
-          <!-- Project 4: ApexLogix AI Enterprise ERP -->
-          <div 
+          <!-- Proof of Work: RockCBT Learning Platform -->
+          <div
             class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
-            data-project="apexlogix"
+            data-project="rockcbt"
             role="button"
             tabindex="0"
-            aria-label="View ApexLogix AI Enterprise details"
+            aria-label="View RockCBT learning platform details"
           >
             <div>
-              <!-- Real Project Picture Preview -->
               <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
-                <img 
-                  src="/images/apexlogix-erp.jpg" 
-                  alt="ApexLogix AI Enterprise Workflow Suite" 
+                <img
+                  src="/images/rockcbt-platform.png"
+                  alt="RockCBT mobile exam practice platform with performance overview and AI tutor"
                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
-                  AI &amp; Workflows
+                  CBT Learning
                 </div>
-                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-emerald-600/95 text-white text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs">
-                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                  <span>Enterprise Active</span>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-blue-700/95 text-white text-[10px] font-mono font-bold shadow-xs">
+                  Mobile App
+                </div>
+              </div>
+
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5 leading-snug">
+                RockCBT Learning Platform
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
+                Mobile-first CBT practice with learner progress, question activity, performance summaries, and an AI study tutor.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-mono">Practice • Progress • AI Tutor</span>
+              <div class="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-blue-600 text-blue-700 group-hover:text-white flex items-center justify-center transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proof of Work: Harvest Field Gospel Mission -->
+          <div
+            class="project-card glass-card glass-card-hover rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between cursor-pointer group select-none"
+            data-project="harvest_field_mission"
+            role="button"
+            tabindex="0"
+            aria-label="View Harvest Field Gospel Mission website details"
+          >
+            <div>
+              <div class="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-slate-100 mb-3 border border-slate-200/90 group-hover:border-cyan-400/70 shadow-xs transition-all">
+                <img
+                  src="/images/harvest-field-mission.png"
+                  alt="Harvest Field Gospel Mission mobile website showing its outreach mission"
+                  class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-white/95 backdrop-blur-sm text-slate-800 text-[10px] font-bold font-mono border border-slate-200/80 shadow-xs">
+                  Mission Outreach
+                </div>
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-md bg-rose-700/95 text-white text-[10px] font-mono font-bold shadow-xs">
+                  Mission Website
                 </div>
               </div>
 
               <h3 class="text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors mb-1.5 leading-snug">
-                ApexLogix AI Workflows
+                Harvest Field Gospel Mission Website
               </h3>
               <p class="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3">
-                Intelligent optical extraction pipeline eliminating 85% of manual invoice sorting with automated approval queues and accounting sync.
+                A mobile-first ministry website sharing its gospel mission, community outreach, and rural and foreign missions.
               </p>
             </div>
-            
+
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-[11px] text-slate-500 font-mono">Python • FastAPI • AI</span>
+              <span class="text-[11px] text-slate-500 font-mono">Mission • Outreach • Community</span>
               <div class="w-7 h-7 rounded-full bg-cyan-50 group-hover:bg-cyan-600 text-cyan-700 group-hover:text-white flex items-center justify-center transition-colors">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -700,6 +802,20 @@
               </div>
             </div>
           </div>
+
+        </div>
+
+        <div class="mt-6 text-center">
+          <a
+            href="https://weblinespay.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-blue-700 hover:bg-blue-50 transition-colors"
+          >
+            View Weblines Pay project
+            <span aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
 
         </div>
 
@@ -717,63 +833,69 @@
           <!-- Copy Column -->
           <div class="lg:col-span-7 space-y-4 sm:space-y-5">
             <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
-              Company Overview
+              About Us
             </div>
             
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-              Where Deep Engineering Meets Reliability.
+              About Rock Wave Digital
             </h2>
 
             <p class="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
-              At Rock Wave Digital Enterprise, we bridge the gap between complex software architecture and real-world business efficiency. As a legally registered enterprise, our team combines elite programming expertise with rigorous systems consulting. From high-integrity systems like RockPay to custom corporate software portals, we construct digital solutions that protect data, handle transactions smoothly, and accelerate growth.
+              Rock Wave Digital Enterprise is an ICT and software engineering business serving organizations in Abuja FCT and Nasarawa. We build websites, custom applications, learning platforms, and workflow automation, and provide ICT consultation and hardware procurement.
             </p>
 
             <!-- 3 Core Values: Clean, compact horizontal row in glassy cards -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
               <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <div class="text-cyan-700 font-bold text-sm mb-1">01. Precision</div>
-                <p class="text-[11px] text-slate-500 leading-normal">Strict architectural patterns built for high-throughput scaling.</p>
+                <div class="text-cyan-700 font-bold text-sm mb-1">01. Clear scope</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Goals, deliverables, costs, and milestones are agreed before work begins.</p>
               </div>
               <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <div class="text-blue-700 font-bold text-sm mb-1">02. Integrity</div>
-                <p class="text-[11px] text-slate-500 leading-normal">Audited security, statutory compliance, and data governance.</p>
+                <div class="text-blue-700 font-bold text-sm mb-1">02. Communication</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Planned review points make progress and feedback visible.</p>
               </div>
               <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                <div class="text-emerald-700 font-bold text-sm mb-1">03. Velocity</div>
-                <p class="text-[11px] text-slate-500 leading-normal">Rapid deployment cycles backed by automated CI/CD pipelines.</p>
+                <div class="text-emerald-700 font-bold text-sm mb-1">03. Handover</div>
+                <p class="text-[11px] text-slate-500 leading-normal">Launch, access, documentation, and any included support are made clear.</p>
               </div>
             </div>
           </div>
 
-          <!-- Feature Graphic / Enterprise Box: Glassy White Card -->
+          <!-- Business details -->
           <div class="lg:col-span-5">
             <div class="glass-card rounded-2xl p-5 sm:p-6 shadow-xl relative overflow-hidden border border-slate-200/90">
               <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                <div class="flex items-center gap-1.5">
-                  <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                </div>
-                <span class="text-[10px] font-mono text-blue-600 font-bold">rockwave.enterprise.sys</span>
+                <h3 class="text-sm font-bold text-slate-900">Business details</h3>
               </div>
 
-              <div class="space-y-2.5 font-mono text-xs text-slate-700">
+              <div class="space-y-2.5 text-xs text-slate-700">
                 <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
-                  <span class="text-slate-500">Entity Status:</span>
-                  <span class="text-emerald-700 font-bold">✓ Registered &amp; Active</span>
+                  <span class="text-slate-500">Registration:</span>
+                  <span class="text-emerald-700 font-bold">CAC registered</span>
                 </div>
                 <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
-                  <span class="text-slate-500">Flagship Proven Stack:</span>
-                  <span class="text-blue-700 font-semibold">RockPay Nigeria Core</span>
+                  <span class="text-slate-500">CAC number:</span>
+                  <span class="text-slate-900 font-semibold">BN 9718038</span>
                 </div>
                 <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
-                  <span class="text-slate-500">Core Disciplines:</span>
-                  <span class="text-slate-900 font-semibold">AI • Dev • Cloud • Hardware</span>
+                  <span class="text-slate-500">Services:</span>
+                  <span class="text-blue-700 font-semibold">Software • Web • ICT</span>
                 </div>
                 <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200/80">
-                  <span class="text-slate-500">Operating Corridor:</span>
+                  <span class="text-slate-500">Service area:</span>
                   <span class="text-slate-800">Abuja FCT / Nasarawa</span>
                 </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-2 text-xs">
+                <a href="https://wa.me/2348030000000" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between gap-3 text-slate-600 hover:text-emerald-700">
+                  <span>WhatsApp</span>
+                  <span class="font-semibold">+234 803 000 0000</span>
+                </a>
+                <a href="mailto:peteroche32@gmail.com" class="flex items-center justify-between gap-3 text-slate-600 hover:text-blue-700">
+                  <span>Email</span>
+                  <span class="font-semibold truncate">peteroche32@gmail.com</span>
+                </a>
               </div>
 
               <div class="mt-4 pt-3 border-t border-slate-100 text-center">
@@ -790,7 +912,49 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 6. CONTACT US INTAKE PORTAL                -->
+    <!-- 6. OUR DELIVERY PROCESS                    -->
+    <!-- ========================================== -->
+    <section id="process" class="py-12 sm:py-16 lg:py-20 bg-white/70 border-y border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-blue-200">
+            Our Delivery Process
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Clear steps. Clear expectations.
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm">
+            We agree on the scope and milestones before work begins, then keep you involved through review and handover.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="glass-card rounded-2xl p-4 sm:p-5">
+            <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-blue-50 text-blue-700 text-sm font-bold">01</span>
+            <h3 class="mt-3 text-sm font-bold text-slate-900">Understand the need</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600">We clarify your goals, users, constraints, and what a successful result should do.</p>
+          </article>
+          <article class="glass-card rounded-2xl p-4 sm:p-5">
+            <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700 text-sm font-bold">02</span>
+            <h3 class="mt-3 text-sm font-bold text-slate-900">Agree scope &amp; milestones</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600">You receive clear deliverables, costs, timeline, and review points before approving the work.</p>
+          </article>
+          <article class="glass-card rounded-2xl p-4 sm:p-5">
+            <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 text-sm font-bold">03</span>
+            <h3 class="mt-3 text-sm font-bold text-slate-900">Build &amp; review</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600">We build against the agreed scope and share work for feedback and testing at planned review points.</p>
+          </article>
+          <article class="glass-card rounded-2xl p-4 sm:p-5">
+            <span class="inline-flex w-9 h-9 items-center justify-center rounded-xl bg-violet-50 text-violet-700 text-sm font-bold">04</span>
+            <h3 class="mt-3 text-sm font-bold text-slate-900">Launch &amp; hand over</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-600">We complete the agreed launch, provide project handover, and clarify any included post-launch support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. CONTACT US INTAKE PORTAL                -->
     <!-- ========================================== -->
     <section id="contact" class="py-12 sm:py-16 lg:py-20 bg-white/70 border-t border-slate-200/80 relative overflow-hidden">
       
@@ -802,35 +966,44 @@
         <!-- Header -->
         <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-2">
           <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-mono font-bold tracking-wider uppercase border border-emerald-200">
-            Intake Portal
+            Get in touch
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Let’s Automate Your Growth.
+            Tell Us What You Need.
           </h2>
           <p class="text-slate-600 text-xs sm:text-sm">
-            Ready to scale your operations or procure enterprise hardware? Drop your details below.
+            Share a website, software, automation, consultation, or ICT equipment request below.
           </p>
         </div>
 
-        <!-- Intake Form Container: Glassy White App Aesthetic -->
+        <!-- Contact form and confirmation -->
         <div class="glass-card rounded-2xl p-5 sm:p-8 shadow-xl border border-slate-200/90">
           
-          <!-- Success Confirmation Banner -->
-          <div id="form-success-banner" class="hidden mb-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2">
-            <div class="flex items-center gap-2.5">
-              <div class="w-7 h-7 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm">
-                ✓
-              </div>
-              <h4 class="font-bold text-base text-slate-900">Project Inquiry Received</h4>
+          <div id="form-success-banner" class="hidden mx-auto max-w-xl py-5 text-center" role="status" aria-live="polite" tabindex="-1">
+            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-700 ring-8 ring-emerald-50/60">
+              <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m5 12 4 4L19 6"></path>
+              </svg>
             </div>
-            <p class="text-xs sm:text-sm text-slate-700 pl-9">
-              Thank you! Your brief has been transmitted to our engineering desk. A solutions architect will reach out to you within 2 business hours via your provided email or WhatsApp line.
+            <p class="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">Message prepared</p>
+            <h3 id="form-success-heading" class="mt-2 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">Thanks for getting in touch.</h3>
+            <p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-600">
+              Your message is ready. Choose email or WhatsApp below to send it, and our team will follow up once it reaches us.
             </p>
-            <div class="pl-9 pt-1">
-              <button id="btn-submit-another" type="button" class="text-xs font-mono font-bold text-emerald-700 underline hover:text-emerald-800 cursor-pointer">
-                Submit Another Inquiry
-              </button>
+            <div class="mx-auto mt-6 grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
+              <a id="form-email-draft-link" href="mailto:peteroche32@gmail.com" class="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-emerald-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-800">
+                Open email draft
+              </a>
+              <a id="form-whatsapp-draft-link" href="https://wa.me/2348030000000" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[48px] items-center justify-center rounded-xl border border-emerald-200 bg-white px-4 py-3 text-sm font-semibold text-emerald-800 transition-colors hover:bg-emerald-50">
+                Open WhatsApp draft
+              </a>
             </div>
+            <p class="mt-4 text-xs leading-relaxed text-slate-500">
+              The message is not sent until you press Send in your email or WhatsApp app.
+            </p>
+            <button id="btn-submit-another" type="button" class="mt-5 min-h-[44px] rounded-lg px-3 text-sm font-semibold text-slate-600 underline decoration-slate-300 underline-offset-4 transition-colors hover:text-slate-900">
+              Edit your details
+            </button>
           </div>
 
           <form id="project-intake-form" class="space-y-4 sm:space-y-5">
@@ -842,27 +1015,29 @@
                 <label for="fullName" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
                   Full Name / Company Name <span class="text-red-500">*</span>
                 </label>
-                <input
+                  <input
                   type="text"
                   id="fullName"
                   name="fullName"
                   required
+                    autocomplete="name"
                   placeholder="e.g., Alex Johnson"
                   class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
               </div>
 
-              <!-- 2. Business Email Address -->
+              <!-- 2. Email Address -->
               <div class="space-y-1.5">
                 <label for="email" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
-                  Business Email Address <span class="text-red-500">*</span>
+                  Email Address <span class="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   required
-                  placeholder="name@company.com"
+                  autocomplete="email"
+                  placeholder="you@example.com"
                   class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
               </div>
@@ -881,6 +1056,8 @@
                   id="phone"
                   name="phone"
                   required
+                  autocomplete="tel"
+                  inputmode="tel"
                   placeholder="+234 803 000 0000"
                   class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm placeholder-slate-400"
                 />
@@ -898,7 +1075,7 @@
                     required
                     class="custom-input w-full min-h-[48px] px-3.5 py-2.5 rounded-xl text-slate-900 text-sm appearance-none cursor-pointer pr-10"
                   >
-                    <option value="" disabled selected>Select an enterprise service</option>
+                    <option value="" disabled selected>Choose a service</option>
                     <option value="Custom Software/Apps">Custom Software/Apps</option>
                     <option value="AI & Workflow Automation">AI &amp; Workflow Automation</option>
                     <option value="IT Consultation">IT Consultation</option>
@@ -917,14 +1094,14 @@
             <!-- 5. Project Brief / Message -->
             <div class="space-y-1.5">
               <label for="message" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700">
-                Project Brief / Message <span class="text-red-500">*</span>
+                What do you need help with? <span class="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 rows="3"
-                placeholder="Describe your project, software goals, or hardware procurement requirements..."
+                placeholder="Tell us a little about what you need. Include any goals, audience, or timeline."
                 class="custom-input w-full p-3.5 rounded-xl text-slate-900 text-sm placeholder-slate-400 resize-y"
               ></textarea>
             </div>
@@ -936,17 +1113,16 @@
                 type="submit"
                 class="btn-native w-full min-h-[48px] px-6 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all cursor-pointer"
               >
-                <span id="btn-text">Launch Project Inquiry &#10140;</span>
-                <svg id="btn-spinner" class="animate-spin -ml-1 mr-3 h-4 w-4 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
+                <span>Prepare my message &#10140;</span>
               </button>
             </div>
 
-            <div class="text-center text-[10px] sm:text-[11px] text-slate-500 font-mono">
-              🔒 Enterprise Privacy Guarantee • Data encrypted &amp; shared strictly under NDA.
-            </div>
+            <details id="privacy-note" class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600">
+              <summary class="cursor-pointer font-semibold text-slate-800">Privacy &amp; data use</summary>
+              <p class="mt-2 leading-relaxed">
+                This form prepares a message on your device; it does not send or store your entries on this website. Your email or WhatsApp service receives the details only if you choose to send the draft. Please do not include passwords, payment information, or other sensitive data.
+              </p>
+            </details>
 
           </form>
 
@@ -975,7 +1151,7 @@
 
           <!-- Right: Operational Zone -->
           <div class="text-slate-500 font-mono text-[11px]">
-            Abuja FCT / Nasarawa Corridor Operational Zone.
+            Serving Abuja FCT and Nasarawa.
           </div>
 
         </div>
@@ -986,7 +1162,7 @@
     <!-- 8. CASE STUDY MODAL POPUP                  -->
     <!-- (Interactive, Responsive, Beautiful)       -->
     <!-- ========================================== -->
-    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <!-- Backdrop with Frosted Blur -->
       <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
 
@@ -1000,8 +1176,8 @@
               Fintech Engine
             </span>
             <span id="modal-status" class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              Live Production
+              <span id="modal-status-indicator" class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span id="modal-status-text">Live Production</span>
             </span>
           </div>
 
@@ -1022,11 +1198,14 @@
         <div class="px-5 sm:px-6 py-5 overflow-y-auto space-y-4 text-left">
           <div>
             <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-1">
-              RockPay Nigeria Core
+              Rock Wave Digital Enterprise
             </h3>
             <p id="modal-subtitle" class="text-xs sm:text-sm text-slate-500 font-medium">
-              National Bill Payment &amp; Automated Microtransactions Infrastructure
+              Custom Software, Web, Mobile, Cloud &amp; Hardware Solutions
             </p>
+            <a id="modal-project-link" href="#" target="_blank" rel="noopener noreferrer" class="hidden mt-2 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900">
+              Visit live project <span aria-hidden="true">&nearr;</span>
+            </a>
           </div>
 
           <!-- Real Project Screenshot Photo -->
@@ -1038,14 +1217,14 @@
               class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" 
             />
             <div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-slate-900/85 backdrop-blur-sm text-white text-[10px] font-mono flex items-center gap-1.5 shadow-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Production Verified Proof</span>
+              <span id="modal-proof-indicator" class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span id="modal-proof-label">Production Verified Proof</span>
             </div>
           </div>
 
           <!-- The Challenge / Context -->
           <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-            <span class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-1">The Architecture Challenge</span>
+            <span id="modal-context-label" class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-1">The Architecture Challenge</span>
             <p id="modal-challenge" class="text-xs sm:text-sm text-slate-700 leading-relaxed">
               Handling peak-hour utility purchases (electricity tokens, bulk airtime, data subscriptions) without double debits or dropped webhook events.
             </p>
@@ -1053,7 +1232,7 @@
 
           <!-- What Rock Wave Built -->
           <div>
-            <span class="text-[10px] font-mono uppercase font-bold text-blue-700 block mb-2">What Rock Wave Delivered</span>
+            <span id="modal-highlights-label" class="text-[10px] font-mono uppercase font-bold text-blue-700 block mb-2">What Rock Wave Delivered</span>
             <ul id="modal-highlights" class="space-y-2 text-xs sm:text-sm text-slate-700">
               <!-- Dynamically populated -->
             </ul>
@@ -1061,14 +1240,14 @@
 
           <!-- Tech Stack Tags -->
           <div>
-            <span class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-2">Engineered Tech Stack</span>
+            <span id="modal-techstack-label" class="text-[10px] font-mono uppercase font-bold text-slate-500 block mb-2">Engineered Tech Stack</span>
             <div id="modal-techstack" class="flex flex-wrap gap-1.5">
               <!-- Dynamically populated -->
             </div>
           </div>
 
           <!-- Metrics / Results -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+          <div id="modal-metrics" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
             <div class="p-2.5 rounded-xl bg-cyan-50 border border-cyan-200/70 text-center">
               <span id="modal-metric-1-val" class="block font-extrabold text-cyan-800 text-base sm:text-lg">99.98%</span>
               <span id="modal-metric-1-lbl" class="text-[10px] font-mono text-cyan-700 uppercase font-semibold">Uptime</span>
@@ -1251,7 +1430,7 @@
         <!-- Quick Idea Pills -->
         <div id="chatbot-quick-prompts" class="flex flex-wrap gap-1.5 pl-8">
           <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 text-slate-700 font-medium shadow-2xs transition-all">
-            💡 Fintech app like RockPay
+            💡 Custom business application
           </button>
           <button type="button" class="chat-prompt-pill px-2.5 py-1 rounded-full text-[11px] bg-white hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 font-medium shadow-2xs transition-all">
             🏫 School portal like Weblines
@@ -1285,7 +1464,7 @@
     <!-- 11. MOBILE NATIVE APP BOTTOM DOCK / TAB BAR -->
     <!-- (iOS / Android Native App Feel on Mobile)  -->
     <!-- ========================================== -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-dock px-3 py-1.5 flex items-center justify-around shadow-2xl">
+    <nav aria-label="Primary mobile navigation" class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-dock px-3 py-1.5 flex items-center justify-around shadow-2xl">
       <a href="#home" class="mobile-dock-tab flex flex-col items-center justify-center min-h-[48px] min-w-[50px] py-1 text-slate-500 hover:text-blue-600 active:scale-95 transition-all">
         <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -1322,7 +1501,7 @@
           <span class="text-[10px] font-bold text-emerald-700">Quote</span>
         </div>
       </a>
-    </div>
+    </nav>
 
     <!-- ========================================== -->
     <!-- INTERACTIVE JAVASCRIPT & MODAL LOGIC       -->
@@ -1331,85 +1510,70 @@
       document.addEventListener('DOMContentLoaded', () => {
         // Project Database for Modal Details (With Real Screenshots Proof)
         const projectData = {
-          rockpay_bills: {
-            title: 'RockPay Utility & Bills Portal',
-            subtitle: 'National Bill Payment, Token Dispensation & Multi-Service Receipt Engine',
-            category: 'Fintech Engine',
-            status: 'Live Production',
-            image: '/images/rockpay-bills.jpg',
-            servicePreselect: 'Custom Software/Apps',
-            challenge: 'High concurrency during evening peak payment hours resulted in delayed token generation and reconciliation mismatches across legacy utility aggregators.',
-            highlights: [
-              'Designed a fault-tolerant message queue architecture handling 50,000+ daily electricity tokens and VTU airtime dispatches.',
-              'Implemented cryptographic double-entry ledger bookkeeping to guarantee zero transaction loss during network partitions.',
-              'Engineered multi-provider failover routing and PDF/WhatsApp multi-receipt downloads ensuring 99.98% delivery success.'
-            ],
-            techStack: ['React', 'Node.js', 'PostgreSQL', 'Redis Queue', 'Paystack API', 'VTPass', 'Tailwind CSS'],
-            metrics: [
-              { val: '99.98%', label: 'Uptime' },
-              { val: '< 150ms', label: 'Token Speed' },
-              { val: 'Zero', label: 'Ledger Drift' }
-            ]
-          },
-          rockpay_wallet: {
-            title: 'RockPay Mobile Digital Wallet',
-            subtitle: 'Consumer iOS/Android Wallet with Instant Paystack Funding & Biometrics',
-            category: 'Mobile App',
-            status: 'Active Mobile App',
-            image: '/images/rockpay-wallet.jpg',
-            servicePreselect: 'Custom Software/Apps',
-            challenge: 'Consumers demanded a clean, native-feeling mobile app to fund their wallets instantly and settle frequent recurring bills without re-entering card numbers.',
-            highlights: [
-              'Built native mobile interfaces with biometric authorization and eye-icon privacy balance masking.',
-              'Integrated automated Paystack dedicated virtual bank accounts for zero-delay instant wallet funding.',
-              'Designed 1-tap QuickPay presets reducing regular bill checkout time by over 75%.'
-            ],
-            techStack: ['React Native', 'TypeScript', 'Node.js', 'Paystack Virtual Accounts', 'PostgreSQL', 'Redis'],
-            metrics: [
-              { val: '3 Taps', label: 'Checkout' },
-              { val: 'Instant', label: 'Top-Up' },
-              { val: '4.8 ★', label: 'User Rating' }
-            ]
-          },
           weblines_school: {
-            title: 'Weblines High School Portal',
-            subtitle: 'Comprehensive School Grading, Student Records & Term Result Sheets',
-            category: 'EdTech Portal',
-            status: 'Live on weblines.netlify.app',
+            title: 'WeblinesHub School Results',
+            subtitle: 'School result management and online report access',
+            category: 'Education Platform',
+            status: 'Live project',
+            proofLabel: 'WeblinesHub project screenshot',
+            contextLabel: 'School Results Platform',
+            highlightsLabel: 'Platform Capabilities',
+            techStackLabel: 'School & Family Features',
+            statusTone: 'blue',
+            projectUrl: 'https://weblinesskul.netlify.app/',
             image: '/images/weblines-school.jpg',
             servicePreselect: 'Custom Software/Apps',
-            challenge: 'Manual grade calculations on physical sheets created grading discrepancies, delayed end-of-term reports, and made it difficult for parents to track child progress.',
+            challenge: 'Schools need a clear way to compute results, prepare report cards, and give families online access to student results.',
             highlights: [
-              'Architected a cloud-hosted school management platform managing sessions, terms, classes, and teacher rosters.',
-              'Automated third-term cumulative score calculations, grading rankings, and instant PDF report cards.',
-              'Integrated parent portal allowing secure remote viewing of continuous assessment scores and attendance.'
+              'Automated school result computation and report generation.',
+              'Online result access for parents and students.',
+              'A focused school-results workflow for administrators and families.'
             ],
-            techStack: ['Vue.js / React', 'Tailwind CSS', 'Cloud Firestore', 'Netlify Edge', 'Node.js'],
-            metrics: [
-              { val: '100% Digital', label: 'Report Cards' },
-              { val: 'Zero', label: 'Calc Errors' },
-              { val: '3x Faster', label: 'Term Processing' }
-            ]
+            techStack: ['Result computation', 'Report cards', 'Online result access']
           },
-          apexlogix: {
-            title: 'ApexLogix AI Enterprise Workflows',
-            subtitle: 'Automated Invoice Processing & Multi-Tier Enterprise Approval Pipeline',
-            category: 'AI & Automation',
-            status: 'Enterprise Deployed',
-            image: '/images/apexlogix-erp.jpg',
-            servicePreselect: 'AI & Workflow Automation',
-            challenge: 'Enterprise finance officers were losing 20+ hours each week manually keying PDF vendor invoices, verifying tax IDs, and chasing department approval signatures.',
+          rockcbt: {
+            title: 'RockCBT Learning Platform',
+            subtitle: 'Mobile-first computer-based test preparation and learning support',
+            category: 'CBT Learning Platform',
+            status: 'Live project',
+            proofLabel: 'RockCBT product screenshot',
+            contextLabel: 'Platform Overview',
+            highlightsLabel: 'Learning Features',
+            techStackLabel: 'Product Capabilities',
+            statusTone: 'blue',
+            portraitImage: true,
+            projectUrl: 'https://weblinescbts.netlify.app/',
+            image: '/images/rockcbt-platform.png',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'Learners need an accessible way to prepare for exams, practice questions, follow their progress, and get study support.',
             highlights: [
-              'Trained a custom multimodal AI document extraction engine achieving 99.4% precision on unstructured vendor invoices.',
-              'Engineered bi-directional webhooks syncing approved expenditures into client ERP and banking disbursement queues.',
-              'Automated audit compliance reporting with cryptographic timestamping for corporate regulatory readiness.'
+              'Practice test entry point with question activity and session tracking.',
+              'Performance overview with scores, question totals, and learning streaks.',
+              'AI Tutor access for on-demand study assistance.'
             ],
-            techStack: ['Python', 'FastAPI', 'Gemini Vision AI', 'Celery', 'PostgreSQL', 'Vue 3', 'Docker'],
-            metrics: [
-              { val: '85%', label: 'Time Saved' },
-              { val: '99.4%', label: 'AI Accuracy' },
-              { val: '< 2 mins', label: 'Approval Speed' }
-            ]
+            techStack: ['Practice tests', 'Progress tracking', 'Performance overview', 'AI study tutor']
+          },
+          harvest_field_mission: {
+            title: 'Harvest Field Gospel Mission Website',
+            subtitle: 'Mobile-first website for gospel outreach and mission engagement',
+            category: 'Mission Outreach Website',
+            status: 'Live project',
+            proofLabel: 'Harvest Field website screenshot',
+            contextLabel: 'Website Overview',
+            highlightsLabel: 'Outreach Features',
+            techStackLabel: 'Mission & Visitor Paths',
+            statusTone: 'blue',
+            portraitImage: true,
+            projectUrl: 'https://harvestfieldgospelmisson.pages.dev/',
+            image: '/images/harvest-field-mission.png',
+            servicePreselect: 'Custom Software/Apps',
+            challenge: 'The site introduces Harvest Field Gospel Mission and presents its community outreach and rural and foreign missions in a clear mobile experience.',
+            highlights: [
+              'Mission-led homepage focused on outreach and bringing hope to communities.',
+              'Clear information about community outreach and rural and foreign missions.',
+              'Prominent Join Us and Explore paths for visitors.'
+            ],
+            techStack: ['Gospel outreach', 'Community missions', 'Rural & foreign outreach', 'Join & explore']
           }
         };
 
@@ -1420,6 +1584,7 @@
         const modalCancelBtn = document.getElementById('modal-cancel-btn');
         const modalCtaBtn = document.getElementById('modal-cta-btn');
         const projectCards = document.querySelectorAll('.project-card');
+        let lastFocusedProject = null;
 
         function openModal(projectId) {
           const data = projectData[projectId];
@@ -1429,12 +1594,36 @@
           document.getElementById('modal-subtitle').textContent = data.subtitle;
           document.getElementById('modal-category').textContent = data.category;
           document.getElementById('modal-challenge').textContent = data.challenge;
+          const projectLink = document.getElementById('modal-project-link');
+          projectLink.href = data.projectUrl || '#';
+          projectLink.classList.toggle('hidden', !data.projectUrl);
 
-          // Set Real Proof Image
+          const isConcept = data.isConcept === true;
+          const isBlueStatus = isConcept || data.statusTone === 'blue';
+          const statusIndicator = document.getElementById('modal-status-indicator');
+          const proofIndicator = document.getElementById('modal-proof-indicator');
+          document.getElementById('modal-status-text').textContent = data.status;
+          document.getElementById('modal-status').classList.toggle('text-blue-700', isBlueStatus);
+          document.getElementById('modal-status').classList.toggle('text-emerald-700', !isBlueStatus);
+          statusIndicator.classList.toggle('bg-blue-500', isBlueStatus);
+          statusIndicator.classList.toggle('bg-emerald-500', !isBlueStatus);
+          proofIndicator.classList.toggle('bg-blue-400', isBlueStatus);
+          proofIndicator.classList.toggle('bg-emerald-400', !isBlueStatus);
+          proofIndicator.classList.toggle('animate-pulse', !isBlueStatus);
+          document.getElementById('modal-proof-label').textContent = data.proofLabel
+            || (isConcept ? 'Concept mockup — replace with real screenshot' : 'Production Verified Proof');
+          document.getElementById('modal-context-label').textContent = data.contextLabel
+            || (isConcept ? 'Concept Brief' : 'The Architecture Challenge');
+          document.getElementById('modal-highlights-label').textContent = data.highlightsLabel
+            || (isConcept ? 'Concept Scope' : 'What Rock Wave Delivered');
+          document.getElementById('modal-techstack-label').textContent = data.techStackLabel
+            || (isConcept ? 'Illustrative Tech Stack' : 'Engineered Tech Stack');
+
           const modalImg = document.getElementById('modal-image');
           if (modalImg && data.image) {
             modalImg.src = data.image;
             modalImg.alt = data.title;
+            modalImg.style.objectFit = data.portraitImage ? 'contain' : 'cover';
           }
 
           // Highlights
@@ -1460,13 +1649,15 @@
             techContainer.appendChild(span);
           });
 
-          // Metrics
-          document.getElementById('modal-metric-1-val').textContent = data.metrics[0].val;
-          document.getElementById('modal-metric-1-lbl').textContent = data.metrics[0].label;
-          document.getElementById('modal-metric-2-val').textContent = data.metrics[1].val;
-          document.getElementById('modal-metric-2-lbl').textContent = data.metrics[1].label;
-          document.getElementById('modal-metric-3-val').textContent = data.metrics[2].val;
-          document.getElementById('modal-metric-3-lbl').textContent = data.metrics[2].label;
+          const metrics = data.metrics || [];
+          const metricsContainer = document.getElementById('modal-metrics');
+          metricsContainer.classList.toggle('hidden', metrics.length !== 3);
+          if (metrics.length === 3) {
+            metrics.forEach((metric, index) => {
+              document.getElementById(`modal-metric-${index + 1}-val`).textContent = metric.val;
+              document.getElementById(`modal-metric-${index + 1}-lbl`).textContent = metric.label;
+            });
+          }
 
           // Preselect service on CTA click
           modalCtaBtn.onclick = () => {
@@ -1479,11 +1670,16 @@
 
           modal.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
+          lastFocusedProject = document.activeElement;
+          modalCloseBtn.focus();
         }
 
         function closeModal() {
           modal.classList.add('hidden');
           document.body.style.overflow = '';
+          if (lastFocusedProject instanceof HTMLElement) {
+            lastFocusedProject.focus();
+          }
         }
 
         projectCards.forEach(card => {
@@ -1516,6 +1712,27 @@
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const closeIcon = document.getElementById('close-icon');
         const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        const installButton = document.getElementById('pwa-install-btn');
+        let deferredInstallPrompt = null;
+
+        window.addEventListener('beforeinstallprompt', (event) => {
+          event.preventDefault();
+          deferredInstallPrompt = event;
+          installButton.classList.remove('hidden');
+        });
+
+        window.addEventListener('appinstalled', () => {
+          deferredInstallPrompt = null;
+          installButton.classList.add('hidden');
+        });
+
+        installButton.addEventListener('click', async () => {
+          if (!deferredInstallPrompt) return;
+          await deferredInstallPrompt.prompt();
+          await deferredInstallPrompt.userChoice;
+          deferredInstallPrompt = null;
+          installButton.classList.add('hidden');
+        });
 
         function toggleMenu() {
           const isOpen = !mobileDrawer.classList.contains('hidden');
@@ -1536,6 +1753,13 @@
           mobileMenuBtn.addEventListener('click', toggleMenu);
         }
 
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !mobileDrawer.classList.contains('hidden')) {
+            toggleMenu();
+            mobileMenuBtn.focus();
+          }
+        });
+
         mobileLinks.forEach(link => {
           link.addEventListener('click', () => {
             if (!mobileDrawer.classList.contains('hidden')) {
@@ -1547,9 +1771,9 @@
         // Active Tab Indicator in Mobile Dock on Scroll
         const sections = document.querySelectorAll('section[id]');
         const dockTabs = document.querySelectorAll('.mobile-dock-tab');
-        window.addEventListener('scroll', () => {
+        function updateActiveDockTab() {
           let currentId = '';
-          const scrollPosition = window.scrollY + 200;
+          const scrollPosition = window.scrollY + window.innerHeight * 0.3;
           sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
@@ -1560,26 +1784,41 @@
           if (currentId) {
             dockTabs.forEach(tab => {
               if (tab.getAttribute('href') === `#${currentId}`) {
-                tab.classList.add('text-blue-600');
+                tab.setAttribute('aria-current', 'page');
                 tab.classList.remove('text-slate-500');
-              } else if (tab.getAttribute('href') !== '#contact') {
-                tab.classList.remove('text-blue-600');
+              } else {
+                tab.removeAttribute('aria-current');
                 tab.classList.add('text-slate-500');
               }
             });
           }
-        }, { passive: true });
+        }
+
+        window.addEventListener('scroll', updateActiveDockTab, { passive: true });
+        window.addEventListener('resize', updateActiveDockTab, { passive: true });
+        updateActiveDockTab();
+
+        const isLocalDevelopment = ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+        if ('serviceWorker' in navigator && isLocalDevelopment) {
+          navigator.serviceWorker.getRegistrations()
+            .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+            .catch((error) => console.warn('Unable to unregister the development app worker:', error));
+        } else if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').catch((error) => {
+            console.warn('Unable to register the offline app worker:', error);
+          });
+        }
 
         // Project Intake Form Submission Handling
         const form = document.getElementById('project-intake-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnSpinner = document.getElementById('btn-spinner');
         const successBanner = document.getElementById('form-success-banner');
+        const formSuccessHeading = document.getElementById('form-success-heading');
         const submitAnotherBtn = document.getElementById('btn-submit-another');
+        const formEmailDraftLink = document.getElementById('form-email-draft-link');
+        const formWhatsappDraftLink = document.getElementById('form-whatsapp-draft-link');
 
-        if (form) {
-          form.addEventListener('submit', async (e) => {
+        if (form && successBanner && formSuccessHeading && formEmailDraftLink && formWhatsappDraftLink) {
+          form.addEventListener('submit', (e) => {
             e.preventDefault();
 
             const fullName = document.getElementById('fullName').value.trim();
@@ -1588,49 +1827,37 @@
             const service = document.getElementById('service').value;
             const message = document.getElementById('message').value.trim();
 
-            if (!fullName || !email || !phone || !service || !message) {
-              alert('Please complete all required fields.');
-              return;
-            }
+            const messageBody = [
+              'Hello Rock Wave Digital Enterprise,',
+              '',
+              'I would like to discuss a project.',
+              '',
+              `Name: ${fullName}`,
+              `Email: ${email}`,
+              `Phone: ${phone}`,
+              `Service: ${service}`,
+              '',
+              'Project brief:',
+              message
+            ].join('\n');
+            const subject = `Project inquiry: ${service}`;
 
-            btnText.textContent = 'Transmitting Inquiry...';
-            btnSpinner.classList.remove('hidden');
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-80');
+            formSuccessHeading.textContent = `Thanks for getting in touch, ${fullName}.`;
+            formEmailDraftLink.href = `mailto:peteroche32@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+            formWhatsappDraftLink.href = `https://wa.me/2348030000000?text=${encodeURIComponent(messageBody)}`;
 
-            try {
-              await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ fullName, email, phone, service, message }),
-              }).catch(() => null);
-
-              setTimeout(() => {
-                btnSpinner.classList.add('hidden');
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-80');
-                btnText.innerHTML = 'Launch Project Inquiry &#10140;';
-
-                form.reset();
-                form.classList.add('hidden');
-                successBanner.classList.remove('hidden');
-                successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-              }, 300);
-
-            } catch (err) {
-              btnSpinner.classList.add('hidden');
-              submitBtn.disabled = false;
-              submitBtn.classList.remove('opacity-80');
-              btnText.innerHTML = 'Launch Project Inquiry &#10140;';
-              alert('Thank you! Your inquiry has been registered.');
-            }
+            form.classList.add('hidden');
+            successBanner.classList.remove('hidden');
+            successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            successBanner.focus();
           });
         }
 
-        if (submitAnotherBtn) {
+        if (submitAnotherBtn && form && successBanner) {
           submitAnotherBtn.addEventListener('click', () => {
             successBanner.classList.add('hidden');
             form.classList.remove('hidden');
+            document.getElementById('fullName').focus();
           });
         }
 
